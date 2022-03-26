@@ -1,0 +1,16 @@
+
+  .container {
+    /* background-color: #ffd7ea; */
+    padding: 30px 5vw;
+    /* background-image: url('../public/background_image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-blend-mode:soft-light; */
+  }
+  .disclaimer{
+    background-color: #d40867;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+  }
