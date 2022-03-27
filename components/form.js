@@ -39,47 +39,17 @@ class FormComponent extends React.Component{
             console.log(event.target.email.value + ' in submit');
         
             console.log('submitted');
-            fetch('./api/email',{
+            // fetch('./api/email',{
+            //   method:'POST',
+            //   body: JSON.stringify(this.state)
+            // });
+            fetch('./api/sheets',{
               method:'POST',
               body: JSON.stringify(this.state)
             });
       };
         
-    handleSheets = async () =>{
-        const request = {
-            // The ID of the spreadsheet to update.
-            spreadsheetId: '16-cmNiYNJyy0B4E8HHCDhU8vQwkpxH7_VKlNR7QO39Y',  // TODO: Update placeholder value.
-        
-            // The A1 notation of a range to search for a logical table of data.
-            // Values are appended after the last row of the table.
-            range: 'A2',  // TODO: Update placeholder value.
-        
-            // How the input data should be interpreted.
-            valueInputOption: 'USER_ENTERED',  // TODO: Update placeholder value.
-        
-            // How the input data should be inserted.
-            insertDataOption: 'INSERT_ROWS',  // TODO: Update placeholder value.
-        
-            resource: {
-              // TODO: Add desired properties to the request body.
-              'values':[
-                  [
-                      this.state.firstName,this.state.lastName,this.state.email,this, this.state.age,
-                  ]
-              ]
-            },
-        
-            auth: authClient,
-          };
-        
-          try {
-            const response = (await sheets.spreadsheets.values.append(request)).data;
-            // TODO: Change code below to process the `response` object:
-            console.log(JSON.stringify(response, null, 2));
-          } catch (err) {
-            console.error(err);
-          }
-    };
+    
     
     render(){return(
     <div>
@@ -88,6 +58,7 @@ class FormComponent extends React.Component{
         <h1 className={styles.sectionSubtitle}>Information</h1>
         <InputComponent name={'firstName'} type={'text'} label={'First Name'} required  onChange={this.handleChange} id = {'firstName'} value={this.firstName}/>
         <InputComponent name={'lastName'} type={'text'}  label={'Last Name'}  required onChange={this.handleChange} id = {'lastName'} value={this.lastName}/>
+        <InputComponent name={'age'} type={'number'}  label={'Age'}  required onChange={this.handleChange} id = {'age'} value={this.age}/>
         <InputComponent name={'Barrangay'} type={'text'} label={'Barrangay'}  required onChange={this.handleChange} id = {'Barrangay'} value={this.Barrangay}/>
         <InputComponent name={'City'} type={'text'} label={'City'}  required onChange={this.handleChange} id = {'City'} value={this.City}/>
         <h1 className={styles.sectionTitle }>Contact</h1>
