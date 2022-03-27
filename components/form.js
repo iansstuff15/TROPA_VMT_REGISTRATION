@@ -38,15 +38,20 @@ class FormComponent extends React.Component{
             console.log(this.state)
             console.log(event.target.email.value + ' in submit');
         
-            console.log('submitted');
-            // fetch('./api/email',{
-            //   method:'POST',
-            //   body: JSON.stringify(this.state)
-            // });
+           
+            fetch('./api/email',{
+              method:'POST',
+              body: JSON.stringify(this.state)
+            });
             fetch('./api/sheets',{
               method:'POST',
               body: JSON.stringify(this.state)
             });
+            console.log(fetch('./api/sheets',{
+              method:'POST',
+              body: JSON.stringify(this.state)
+            }))
+            console.log('submitted');
       };
         
     

@@ -23,6 +23,6 @@ console.log(body.email+ 'body');
     console.error(error)
   })
 
-    res.status(200).json({ status:'success' ,body: body})
+    res.status(200).json({ status:'success' ,key: process.env.SENDGRID_API_KEY })
   }
   
