@@ -50,3 +50,6 @@ font-size: 3em;
 .container_selected:hover{
   background-color: #990048;
 }
+.reminder{
+  color: #575757;
+}

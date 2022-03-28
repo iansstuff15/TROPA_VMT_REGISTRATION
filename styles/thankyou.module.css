@@ -14,7 +14,7 @@
 }
 .subtitle{
     font-weight: normal;
-    font-size: 1.5em;
+    font-size: 2.5em;
 }
 .button{
     background-color: #d40867;
@@ -32,3 +32,8 @@
     justify-content: center;
     display: flex;
 }
+.reminder{
+    color: #575757;
+    font-size: 1.3em;
+    font-weight: normal;
+  }
