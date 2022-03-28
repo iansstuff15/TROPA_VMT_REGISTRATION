@@ -1,0 +1,14 @@
+
+  .consent_paragraph{
+    background-color: #048d1a94;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+
+    color: white;
+  }
+.checkbox{
+    border: none;
+    outline: none;
+    background-color: #048d1a94;
+}

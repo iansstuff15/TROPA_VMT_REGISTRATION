@@ -6,3 +6,18 @@ color: #d40867;;
 .sectionSubtitle{
 font-size: 3em;
 }
+.button{
+    background-color: #d40867;
+      padding: 20px;
+      font-weight: bold;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+        border: none;
+    display: flex;
+    float: right;
+
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+  }

@@ -1,0 +1,34 @@
+.container{
+   text-align: center;
+   justify-content: center;
+   align-content: center;
+   
+   padding: 30px 5vw;
+}
+.emphasis{
+    color: #d40867;
+}
+.title{
+    font-weight: bold;
+    font-size: 3.5em;
+}
+.subtitle{
+    font-weight: normal;
+    font-size: 1.5em;
+}
+.button{
+    background-color: #d40867;
+    padding: 20px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+  
+    max-width: 400px;    
+}
+.buttoncontainer{
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
