@@ -23,4 +23,30 @@ font-size: 3em;
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 40px;
-  }
+  }.container_unselected{
+    background-color: #c0c0c0;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+.container_unselected:hover{
+  background-color: #7e7e7e;
+}
+.container_selected{
+    background-color: #d40867;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 200px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+.container_selected:hover{
+  background-color: #990048;
+}

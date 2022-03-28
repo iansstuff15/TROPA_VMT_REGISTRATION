@@ -33,7 +33,7 @@ export default async function handler(req, res) {
        valueInputOption: 'USER_ENTERED',
        resource: {
            values:[[
-            body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,"MWF"
+            body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday
            ]]
        }
    })

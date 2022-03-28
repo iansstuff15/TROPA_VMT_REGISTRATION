@@ -3,6 +3,8 @@ import styles from '../styles/form.module.css'
 import React from "react";
 import { useRouter, withRouter } from "next/router";
 import DataPrivacyConsent from "./data_privacy";
+import Thankyou from "./thankyou";
+import DayComponent from "./day";
 
 
 class FormComponent extends React.Component{
@@ -26,6 +28,7 @@ class FormComponent extends React.Component{
         Saturday: false,
         Sunday: false,
         step:1,
+        isSelected: false,
         };
       }
 
@@ -65,12 +68,21 @@ class FormComponent extends React.Component{
               body: JSON.stringify(this.state)
             }))
             console.log('submitted');
-
+            this.setState({step: this.state.step + 1})
       };
         
+    handleDaySelect= async (event)=>{
+   
+     const  value =this.state[event.target.id]
+   await    this.setState({ [event.target.id]: !value});
+   console.log(this.state)
+    }
     
     
     render(){return(
+    <>   {
+     
+    this.state.step !== 5?
     <div>
         <form onSubmit={this.handleSubmit} >
 
@@ -79,7 +91,7 @@ class FormComponent extends React.Component{
 
 <h1 className={styles.sectionTitle}>Personal</h1>
         <h1 className={styles.sectionSubtitle}>Information</h1>
-        <InputComponent name={'firstName'} type={'text'} label={'First Name'} required  onChange={this.handleChange} id = {'firstName'} value={this.firstName}/>
+        <InputComponent name={'firstName'} type={'text'} label={'First Name'} required  onChange={this.handleChange} id = {'firstName'} value={this.firstName} />
         <InputComponent name={'lastName'} type={'text'}  label={'Last Name'}  required onChange={this.handleChange} id = {'lastName'} value={this.lastName}/>
         <InputComponent name={'age'} type={'number'}  label={'Age'}  required onChange={this.handleChange} id = {'age'} value={this.age}/>
         <InputComponent name={'Barrangay'} type={'text'} label={'Barrangay'}  required onChange={this.handleChange} id = {'Barrangay'} value={this.Barrangay}/>
@@ -106,16 +118,17 @@ class FormComponent extends React.Component{
 </div>
 
 <div className={this.state.step!==3? styles.hide: null}>
-<h1 className={styles.sectionTitle}>Volunteer</h1>
+ <h1 className={styles.sectionTitle}>Volunteer</h1>
         <h1>Availablitity</h1>
-        <InputComponent name={'Monday'} type={'checkbox'}  label={'Monday'} onChange={this.handleChange} id = {'Monday'} value={this.Monday}/>
-        <InputComponent name={'Tuesday'} type={'checkbox'} label={'Tuesday'}   onChange={this.handleChange} id = {'Tuesday'} value={this.Tuesday}/>
-        <InputComponent name={'Wednesday'} type={'checkbox'} label={'Wednesday'} onChange={this.handleChange} id = {'Wednesday'} value={this.Wednesday}/>
-        <InputComponent name={'Thursday'} type={'checkbox'} label={'Thursday'}   onChange={this.handleChange} id = {'Thursday'} value={this.Thursday}/>
-        <InputComponent name={'Friday'} type={'checkbox'} label={'Friday'}   onChange={this.handleChange} id = {'Friday'} value={this.Friday}/>
-        <InputComponent name={'Saturday'} type={'checkbox'} label={'Saturday'}   onChange={this.handleChange} id = {'Saturday'} value={this.Saturday}/>
-        <InputComponent name={'Sunday'} type={'checkbox'} label={'Sunday'}  onChange={this.handleChange} id = {'Sunday'} value={this.Sunday}/>
 
+      <DayComponent name={'Monday'}  id={'Monday'}   className={this.state.Monday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+      <DayComponent name={'Tuesday'} id={'Tuesday'} className={this.state.Tuesday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+      <DayComponent name={'Wednesday'} id={'Wednesday'} className={this.state.Wednesday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+      <DayComponent name={'Thursday'} id={'Thursday'}  className={this.state.Thursday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+      <DayComponent name={'Friday'} id={'Friday'} className={this.state.Friday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+      <DayComponent name={'Saturday'} id={'Saturday'} className={this.state.Saturday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+      <DayComponent name={'Sunday'} id={'Sunday'} className={this.state.Sunday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+       
 <input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
 <input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
 </div>
@@ -146,7 +159,11 @@ class FormComponent extends React.Component{
                
         </form>
 
-    </div>
+    </div>: 
+    <Thankyou/>
+    }
+    </>
+
 )}}
 
 export default FormComponent

@@ -1,0 +1,19 @@
+.container_unselected{
+    background-color: #c0c0c0;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+}
+.container_selected{
+    background-color: #d40867;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 200px;
+    color: white;
+    text-align: center;
+}

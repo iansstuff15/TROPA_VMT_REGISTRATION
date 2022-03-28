@@ -10,7 +10,7 @@ console.log(body.email+ 'body');
     const msg = {
         to: body.email, // Change to your recipient
         from: 'dlpowell35@gmail.com', // Change to your verified sender
-        subject: 'Greetings Kakampink!',
+        subject: 'Maraming Salamat Kakampink!',
         // text: 'Test Email Recieved',
         html: `<html style="margin: 0;padding: 0;border: 0;">
         <head style="margin: 0;padding: 0;border: 0;">
@@ -24,7 +24,7 @@ console.log(body.email+ 'body');
         
        
        
-        <body style="margin: 0 auto;padding: 4%;border: 0;background-color: #fc368c;font-size: 19px;max-width: 800px;">
+        <body style="margin: 0 auto;padding: 4%;border: 0;background-color: #fc368c;font-size: 1em;max-width: 800px;">
             <div class="email" style="margin: 0;padding: 0 9% 10% 9%;border: 0;background-color: white;border-radius: 15px;overflow: hidden;">
        
             <div style="margin: 0;padding: 0;border: 0;">
