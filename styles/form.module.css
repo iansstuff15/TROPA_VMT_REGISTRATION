@@ -6,6 +6,9 @@ color: #d40867;;
 .sectionSubtitle{
 font-size: 3em;
 }
+.hide{
+  display: none;
+}
 .button{
     background-color: #d40867;
       padding: 20px;

@@ -75,8 +75,8 @@ class FormComponent extends React.Component{
         <form onSubmit={this.handleSubmit} >
 
       <DataPrivacyConsent/>
-{this.state.step === 1? 
-<>
+<div className={this.state.step!==1? styles.hide: null}>
+
 <h1 className={styles.sectionTitle}>Personal</h1>
         <h1 className={styles.sectionSubtitle}>Information</h1>
         <InputComponent name={'firstName'} type={'text'} label={'First Name'} required  onChange={this.handleChange} id = {'firstName'} value={this.firstName}/>
@@ -84,22 +84,29 @@ class FormComponent extends React.Component{
         <InputComponent name={'age'} type={'number'}  label={'Age'}  required onChange={this.handleChange} id = {'age'} value={this.age}/>
         <InputComponent name={'Barrangay'} type={'text'} label={'Barrangay'}  required onChange={this.handleChange} id = {'Barrangay'} value={this.Barrangay}/>
         <InputComponent name={'City'} type={'text'} label={'City'}  required onChange={this.handleChange} id = {'City'} value={this.City}/>
-        
-</>:null
-}
-     
-        {this.state.step === 2? 
-        <>         <h1 className={styles.sectionTitle }>Contact</h1>
+
+
+<input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
+
+
+</div>
+
+
+<div className={this.state.step!==2? styles.hide: null}>
+
+<h1 className={styles.sectionTitle }>Contact</h1>
          <h1>Information</h1>
          <InputComponent name={'phone'} type={'number'}  label={'Contact Number'}required onChange={this.handleChange} id = {'phone'} value = {this.phone}/>
          
         <InputComponent name={'email'} type={'email'} label={'Email Address'}  required onChange={this.handleChange} id = {'email'} value={this.email}/>
-        </>
-  : null
-      }
-       {this.state.step ===3?
-       <>
-         <h1 className={styles.sectionTitle}>Volunteer</h1>
+
+
+<input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
+<input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
+</div>
+
+<div className={this.state.step!==3? styles.hide: null}>
+<h1 className={styles.sectionTitle}>Volunteer</h1>
         <h1>Availablitity</h1>
         <InputComponent name={'Monday'} type={'checkbox'}  label={'Monday'} onChange={this.handleChange} id = {'Monday'} value={this.Monday}/>
         <InputComponent name={'Tuesday'} type={'checkbox'} label={'Tuesday'}   onChange={this.handleChange} id = {'Tuesday'} value={this.Tuesday}/>
@@ -108,25 +115,31 @@ class FormComponent extends React.Component{
         <InputComponent name={'Friday'} type={'checkbox'} label={'Friday'}   onChange={this.handleChange} id = {'Friday'} value={this.Friday}/>
         <InputComponent name={'Saturday'} type={'checkbox'} label={'Saturday'}   onChange={this.handleChange} id = {'Saturday'} value={this.Saturday}/>
         <InputComponent name={'Sunday'} type={'checkbox'} label={'Sunday'}  onChange={this.handleChange} id = {'Sunday'} value={this.Sunday}/>
-       </>:null
-      }
-      
-    
-        {
-this.state.step === 4?
-<>
-<h1 className={styles.sectionTitle}>Activities</h1>
-        <h1>To Attend</h1>
-        <input type={'submit'} className={styles.button}/>
-        {this.state.step >1? <input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> : null}
-</>:
-<>
 
 <input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
-{this.state.step >1? <input type={'button'} className={styles.button} value={'Previous Step'}  onClick={this.handleChangePreviousStep}/> : null}
+<input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
+</div>
+ 
+        
+    
+<div className={this.state.step!==4? styles.hide: null}>
 
-</>
-        }
+
+
+<h1 className={styles.sectionTitle}>Activities</h1>
+        <h1>To Attend</h1>
+        <input type={'submit'} className={styles.button}/><input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
+</div>
+
+ 
+ 
+ 
+ 
+
+
+
+
+        
       
       
      
