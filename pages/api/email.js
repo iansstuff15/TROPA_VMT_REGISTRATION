@@ -91,7 +91,7 @@ await new Promise((resolve, reject) => {
 await new Promise((resolve, reject) => {
   console.log('in transporter')
   // send mail
-  transporter.sendMail(mailData, (err, info) => {
+  transporter.sendMail(options, (err, info) => {
       if (err) {
           console.error(err);
           reject(err);
