@@ -11,7 +11,7 @@ console.log(body.email+ 'body');
 console.log(  'user'+process.env.CLIENT_EMAIL)
 
 console.log(  'pass'+process.env.CLIENT_PASSWORD,)
-const transporter = nodemailer.createTransport(
+const transporter = await nodemailer.createTransport(
   {
     service:'gmail',
     auth:{
