@@ -63,10 +63,7 @@ class FormComponent extends React.Component{
               method:'POST',
               body: JSON.stringify(this.state)
             });
-            console.log(fetch('./api/sheets',{
-              method:'POST',
-              body: JSON.stringify(this.state)
-            }))
+         
             console.log('submitted');
             this.setState({step: this.state.step + 1})
       };
