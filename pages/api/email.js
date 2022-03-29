@@ -10,8 +10,8 @@ console.log(body.email+ 'body');
 
 console.log(  'user'+process.env.CLIENT_EMAIL)
 
-console.log(  'pass'+process.env.CLIENT_PASSWORD,)
-const transporter = await nodemailer.createTransport(
+console.log(  'user'+process.env.CLIENT_PASSWORD,)
+const transporter = nodemailer.createTransport(
   {
     service:'gmail',
     auth:{
@@ -73,15 +73,33 @@ const options = {
 }
 
 
-await transporter.sendMail(options, function(err,info){
+await new Promise((resolve, reject) => {
+  // verify connection configuration
+  transporter.verify(function (error, success) {
+      if (error) {
+          console.log(error);
+          reject(error);
+      } else {
+          console.log("Server is ready to take our messages");
+          resolve(success);
+      }
+  });
+});
+
+
+
+await new Promise((resolve, reject) => {
   console.log('in transporter')
-  if(err){
-    console.log(err)
-    return
-  }
-  console.log('sent: '+ info.response)
-  console.log('out of transporter')
-})
+  // send mail
+  transporter.sendMail(mailData, (err, info) => {
+      if (err) {
+          console.error(err);
+          reject(err);
+      } else {
+          console.log(info);
+          resolve(info);
+      }
+  });})
 
     res.status(200).json({ status:'success' })
   }
