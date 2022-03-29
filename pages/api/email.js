@@ -3,7 +3,7 @@
 const nodemailer = require('nodemailer');
 
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
     
 const body = JSON.parse(req.body);
 console.log(body.email+ 'body');
@@ -25,7 +25,7 @@ const transporter = nodemailer.createTransport(
 const options = {
   from: 'tropa.volunteer.management@gmail.com',
   to:body.email,
-  subject: 'test if it works',
+  subject: 'Mabuhay Kakampink!',
  html:  `<html style="margin: 0;padding: 0;border: 0;">
  <head style="margin: 0;padding: 0;border: 0;">
      <meta charset="utf-8" style="margin: 0;padding: 0;border: 0;">
@@ -69,7 +69,7 @@ const options = {
 
 </html>`,
 }
-transporter.sendMail(options, function(err,info){
+await transporter.sendMail(options, function(err,info){
   if(err){
     console.log(err)
     return
