@@ -45,7 +45,7 @@ const options = {
 
      <div style="margin: 0;padding: 0;border: 0;">
        
-        <img src="https://i.ibb.co/1Rkw4G7/Whats-App-Image-2022-03-27-at-1-22-30-AM.jpg" alt="hero" class="hero" style="margin: 0;padding: 0;border: 0;width: 100%;border-radius: 25px;margin-top: 40px;">
+        <img src="//i.ibb.co/1Rkw4G7/Whats-App-Image-2022-03-27-at-1-22-30-AM.jpg" alt="hero" class="hero" style="margin: 0;padding: 0;border: 0;width: 100%;border-radius: 25px;margin-top: 40px;">
      
      <h1 class="greetings" style="margin: 0;padding: 0;border: 0;color: black;margin-top: 30px;">Good Day!</h1>
      <h1 style="margin: 0;padding: 0;border: 0;"> 🌷Kakampink!🌷</h1>
