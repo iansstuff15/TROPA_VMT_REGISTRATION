@@ -70,12 +70,13 @@ const options = {
 </html>`,
 }
 await transporter.sendMail(options, function(err,info){
+  console.log('in transporter')
   if(err){
     console.log(err)
     return
   }
   console.log('sent: '+ info.response)
-
+  console.log('out of transporter')
 })
 
     res.status(200).json({ status:'success' })
