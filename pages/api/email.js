@@ -8,7 +8,9 @@ export default async function handler(req, res) {
 const body = JSON.parse(req.body);
 console.log(body.email+ 'body');
 
+console.log(  'user'+process.env.CLIENT_EMAIL)
 
+console.log(  'pass'+process.env.CLIENT_PASSWORD,)
 const transporter = nodemailer.createTransport(
   {
     service:'gmail',
@@ -69,6 +71,8 @@ const options = {
 
 </html>`,
 }
+
+
 await transporter.sendMail(options, function(err,info){
   console.log('in transporter')
   if(err){
