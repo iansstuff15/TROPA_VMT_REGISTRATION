@@ -83,7 +83,7 @@ While using this site, we may ask you to provide us with certain personally iden
 <p>If you have any questions about this Privacy Policy, you can contact us:
 </p>
 <ul>
-    <li>By visiting this page on our website: <Link  href="https://www.facebook.com/solidlenipilipinas" passHref><a target="_blank" rel="noopener noreferrer"><strong>https://www.facebook.com/solidlenipilipinas</strong></a></Link></li>
+    <li>By visiting this page on our website: <Link  href="https://www.facebook.com/solidlenipilipinas"><strong>https://www.facebook.com/solidlenipilipinas</strong></Link></li>
 </ul>
     <input type={'checkbox'} required className={styles.checkbox} onClick={this.handleTick}/><span> I agree</span>
     </div>}
