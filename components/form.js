@@ -95,7 +95,7 @@ class FormComponent extends React.Component{
     <div>
         <form onSubmit={this.handleSubmit} >
 
-      <DataPrivacyConsent/>
+   
 <div className={this.state.step!==1? styles.hide: null}>
 
 <h1 className={styles.sectionTitle}>Personal</h1>
