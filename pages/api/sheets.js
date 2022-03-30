@@ -2,6 +2,7 @@
 import { google } from "googleapis"
 
 export default async function handler(req, res) {
+    const now = new Date();
 
     const body = JSON.parse(req.body);
     const auth = new google.auth.GoogleAuth({
@@ -33,7 +34,7 @@ export default async function handler(req, res) {
        valueInputOption: 'USER_ENTERED',
        resource: {
            values:[[
-            body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday
+            body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday,body.landyardMaking,body.tarpPrintingAndCutting,body.TshirtPrinting,body.MuralPainting,body.DataEncoding,body.HouseToHouse,body.MonetaryDonation,body.CampaignMaterials,body.InKind,body.others,now
            ]]
        }
    })

@@ -5,6 +5,8 @@ import { useRouter, withRouter } from "next/router";
 import DataPrivacyConsent from "./data_privacy";
 import Thankyou from "./thankyou";
 import DayComponent from "./day";
+import ActivityTile from "./acitivity_tile";
+import OtherAssistance from "./other_assitance";
 
 
 class FormComponent extends React.Component{
@@ -29,6 +31,16 @@ class FormComponent extends React.Component{
         Sunday: false,
         step:1,
         isSelected: false,
+        landyardMaking:false,
+        tarpPrintingAndCutting: false,
+        TshirtPrinting: false,
+        MuralPainting:false,
+        DataEncoding: false,
+        HouseToHouse:false,
+        MonetaryDonation: false,
+        CampaignMaterials: false,
+        InKind:false,
+        others:"",
         };
       }
 
@@ -79,7 +91,7 @@ class FormComponent extends React.Component{
     render(){return(
     <>   {
      
-    this.state.step !== 5?
+    this.state.step !== 6?
     <div>
         <form onSubmit={this.handleSubmit} >
 
@@ -88,11 +100,11 @@ class FormComponent extends React.Component{
 
 <h1 className={styles.sectionTitle}>Personal</h1>
         <h1 className={styles.sectionSubtitle}>Information</h1>
-        <InputComponent name={'firstName'} type={'text'} label={'First Name'} required  onChange={this.handleChange} id = {'firstName'} value={this.firstName} />
-        <InputComponent name={'lastName'} type={'text'}  label={'Last Name'}  required onChange={this.handleChange} id = {'lastName'} value={this.lastName}/>
+        <InputComponent name={'firstName'}  autoCapitalize={"true"}   type={'text'} label={'First Name'} required  onChange={this.handleChange} id = {'firstName'} value={this.firstName} />
+        <InputComponent name={'lastName'}  autoCapitalize="true"  type={'text'}  label={'Last Name'}  required onChange={this.handleChange} id = {'lastName'} value={this.lastName}/>
         <InputComponent name={'age'} type={'number'}  label={'Age'}  required onChange={this.handleChange} id = {'age'} value={this.age}/>
-        <InputComponent name={'Barrangay'} type={'text'} label={'Barrangay'}  required onChange={this.handleChange} id = {'Barrangay'} value={this.Barrangay}/>
-        <InputComponent name={'City'} type={'text'} label={'City'}  required onChange={this.handleChange} id = {'City'} value={this.City}/>
+        <InputComponent name={'Barrangay'}  autoCapitalize="true"  type={'text'} label={'Barangay'}  required onChange={this.handleChange} id = {'Barrangay'} value={this.Barrangay}/>
+        <InputComponent name={'City'}  autoCapitalize="true"  type={'text'} label={'City'}  required onChange={this.handleChange} id = {'City'} value={this.City}/>
 
 
 <input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
@@ -130,15 +142,43 @@ class FormComponent extends React.Component{
 <input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
 </div>
  
-        
-    
 <div className={this.state.step!==4? styles.hide: null}>
 
 
 
 <h1 className={styles.sectionTitle}>Activities</h1>
-        <h1>To Attend</h1>
-        <input type={'submit'} className={styles.button}/><input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
+<h1>To Attend</h1>
+<p>Location: Head Quarters @ Cubao – with snacks for volunteers! 😊</p>
+<ActivityTile name={'Lanyard making'} id={'landyardMaking'}   className={this.state.landyardMaking?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+<ActivityTile name={'Tarp printing and cutting'} id={'tarpPrintingAndCutting'}   className={this.state.tarpPrintingAndCutting?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+<ActivityTile name={'T-shirt printing – with snacks'} id={'TshirtPrinting'}   className={this.state.TshirtPrinting?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+<ActivityTile name={'Mural-painting around the Cubao HQ'} id={'MuralPainting'}   className={this.state.MuralPainting?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+<p>Location: Remote work</p>
+<ActivityTile name={'Data encoding'} id={'DataEncoding'}   className={this.state.DataEncoding?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+<p>Location: Target areas include malls, churches, LRT, etc. Locations will be determined by organizers! – with snacks and transpo for volunteers! 😊</p>
+<ActivityTile name={'House to house visits to campaign for VP Leni'} id={'HouseToHouse'}   className={this.state.HouseToHouse?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+
+<input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
+<input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/>  
+</div>
+    
+    
+<div className={this.state.step!==5? styles.hide: null}>
+
+
+
+<h1 className={styles.sectionTitle}>Willing to support</h1>
+<h1>the TRoPa campaign through other means?</h1>
+<p>Location: Head Quarters @ Cubao – with snacks for volunteers! 😊</p>
+<OtherAssistance name={'Monetary donation'} id={'MonetaryDonation'}   className={this.state.MonetaryDonation?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+<OtherAssistance name={'Campaign materials '} id={'CampaignMaterials'}   className={this.state.CampaignMaterials?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+<OtherAssistance name={'In-kind (food for volunteers)'} id={'InKind'}   className={this.state.InKind?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
+<h3>Others</h3>
+
+    <input type={'textarea'} onChange={this.handleChange} id = {'others'} value = {this.others} className={styles.othersField}/>
+   
+  
+     <input type={'submit'} className={styles.button}/><input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
 </div>
 
  

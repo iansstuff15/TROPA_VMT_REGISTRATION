@@ -5,7 +5,7 @@ const Register = ()=> (
     <div className={styles.container} >
     <div className={styles.disclaimer}>
     <h3>Disclaimer</h3>
-    <p>Fugiat non magna in ad sit culpa sit fugiat dolore culpa qui. Excepteur aliquip Lorem in consectetur culpa enim in eu laborum eiusmod cupidatat qui nulla Lorem. Ex sint do mollit et ullamco consequat. Velit incididunt in laborum laborum duis in proident labore enim pariatur.</p>
+    <p> I am providing this information willingly, with the understanding that it will be used solely for the purpose of volunteering under Solid Leni Pilipinas and its activities in support for the presidential and vice presidential campaign of Leni Robredo and Kiko Pangilinan for Halalan 2022.</p>
     </div>
    
    <FormComponent/>

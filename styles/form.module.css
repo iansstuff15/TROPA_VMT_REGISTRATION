@@ -50,3 +50,19 @@ font-size: 3em;
 .container_selected:hover{
   background-color: #990048;
 }
+.othersField{
+  border: none;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 10px 0;
+  background-color: #c0c0c0;
+  font-weight: bold;
+  width: 40vw;
+  height: fit-content;
+  overflow: hidden;
+}
+@media (max-width: 700px) {
+  .othersField {
+      width: 100%;
+  }
+}
