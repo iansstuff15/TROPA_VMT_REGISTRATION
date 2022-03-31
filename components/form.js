@@ -95,6 +95,7 @@ class FormComponent extends React.Component{
 
 <h1 className={styles.sectionTitle}>Personal</h1>
         <h1 className={styles.sectionSubtitle}>Information</h1>
+    
         <InputComponent name={'firstName'}  autoCapitalize={"true"}   type={'text'} label={'First Name'} required  onChange={this.handleChange} id = {'firstName'} value={this.firstName} />
         <InputComponent name={'lastName'}  autoCapitalize="true"  type={'text'}  label={'Last Name'}  required onChange={this.handleChange} id = {'lastName'} value={this.lastName}/>
         <InputComponent name={'age'} type={'number'}  label={'Age'}  required onChange={this.handleChange} id = {'age'} value={this.age}/>

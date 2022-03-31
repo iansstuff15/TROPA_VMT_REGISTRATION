@@ -4,13 +4,13 @@ const nodemailer = require('nodemailer');
 
 
 export default async function handler(req, res) {
-  const today = new Date()
+
   const tomorrow = new Date(today)
   tomorrow.setDate(tomorrow.getDate() + 1)
 
   const month = tomorrow.toLocaleString('default', { month: 'long' });
   const year = tomorrow.getFullYear()
-  const day = tomorrow.getDay()
+  const day = tomorrow.getDate()
 const body = JSON.parse(req.body);
 
 
@@ -71,6 +71,7 @@ const options = {
      
              <div class="bottom-container" style="margin: 0;padding: 0;border: 0;display: flex;">    
              <a href="https://www.facebook.com/solidlenipilipinas" target="_blank" class="FB" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #e3e3e3;color: black;border-radius: 10px;text-align: center;display: inline-block;height: 100%;float: right;margin-top: 10px;margin-right: 20px;">FACEBOOK PAGE</a>
+             <a href="https://twitter.com/pilipinasleni?s=11&t=ZVGoR4vLV1ZxrohxLE7b4w" target="_blank" class="FB" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #e3e3e3;color: black;border-radius: 10px;text-align: center;display: inline-block;height: 100%;float: right;margin-top: 10px;margin-right: 20px;">TWITTER PAGE</a>
              <p class="FB" style="margin: 50px 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;background-color: #e3e3e3;text-decoration: none;color: black;border-radius: 10px;text-align: center;display: inline-block;height: 100%;float: right;margin-top: 10px;margin-right: 20px;">EMAIL: tropa.volunteer.management@gmail.com</p>
              </div>
  
