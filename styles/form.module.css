@@ -65,4 +65,9 @@ font-size: 3em;
   .othersField {
       width: 100%;
   }
+  .sectionTitle{
+    font-size: 4em;
+    line-height: 1;
+    color: #d40867;;
+    }
 }

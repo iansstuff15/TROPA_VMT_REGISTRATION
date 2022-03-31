@@ -57,24 +57,27 @@ const options = {
          <h1 class="greetings" style="margin: 0;padding: 0;border: 0;color: black;margin-top: 30px;">Good Day!</h1>
          <h1 style="margin: 0;padding: 0;border: 0;"> 🌷Kakampink!🌷</h1>
          <p style="margin: 50px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;background-color: white;text-decoration: none;">
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat, numquam unde hic porro nesciunt quos velit eaque ullam natus repellat, explicabo sapiente debitis recusandae voluptate? Tempore necessitatibus quos at tenetur.
+             On behalf of the Solid Leni Pilipinas, we would like to thank you for volunteering your time and effort to be part of our growing Kakampink Community. We love and appreciate that you put your own time aside to help us.  This is not for money, it’s not for fame and it’s not for any personal gain.
+         </p>
+             <p style="margin: 50px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;background-color: white;text-decoration: none;">It was possible only with the assistance of volunteers like you that we have been capable to take-up services in society. We are happy to share with you the zoom link for your onboarding schedule.</p>
  
  <br style="margin: 0;padding: 0;border: 0;">
  <h1 style="margin: 0;padding: 0;border: 0;">Onboarding schedule</h1>
- </p><p style="margin: 50px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;background-color: white;text-decoration: none;"><strong style="margin: 0;padding: 0;border: 0;">Date:</strong> ${month+ ', '+ day +', '+ year}<br style="margin: 0;padding: 0;border: 0;"> <strong style="margin: 0;padding: 0;border: 0;">Time:</strong> 08:30 p.m.</p>
+ <p style="margin: 50px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;background-color: white;text-decoration: none;"><strong style="margin: 0;padding: 0;border: 0;">Date:</strong> date here <br style="margin: 0;padding: 0;border: 0;"> <strong style="margin: 0;padding: 0;border: 0;">Time:</strong> 08:30 p.m.</p>
  <div class="container" style="margin: 0;padding: 0;border: 0;align-content: center;justify-content: center;align-self: center;">
      
      <a href="#" class="button" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #fc368c;color: white;border-radius: 10px;text-align: center;display: inline-block;height: 100%;">Join Onboarding</a>
  </div>
  
-     
+ 
      
              <div class="bottom-container" style="margin: 0;padding: 0;border: 0;display: flex;">    
              <a href="https://www.facebook.com/solidlenipilipinas" target="_blank" class="FB" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #e3e3e3;color: black;border-radius: 10px;text-align: center;display: inline-block;height: 100%;float: right;margin-top: 10px;margin-right: 20px;">FACEBOOK PAGE</a>
              <p class="FB" style="margin: 50px 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;background-color: #e3e3e3;text-decoration: none;color: black;border-radius: 10px;text-align: center;display: inline-block;height: 100%;float: right;margin-top: 10px;margin-right: 20px;">EMAIL: tropa.volunteer.management@gmail.com</p>
              </div>
  
-        
+         <p style="margin: 50px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;background-color: white;text-decoration: none;"><strong style="margin: 0;padding: 0;border: 0;">Always remember “Sa Gobyernong tapat, angat buhay ang lahat.”  </strong></p>
+         <p class="position" style="margin: 50px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;background-color: white;text-decoration: none;color: #fc368c;"><strong style="margin: 0;padding: 0;border: 0;">Tayo ang SOLID LENI Pilipinas!</strong></p>
      
      </div>
      </div></body>
