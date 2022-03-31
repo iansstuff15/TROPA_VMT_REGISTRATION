@@ -37,3 +37,18 @@
     font-size: 1.3em;
     font-weight: normal;
   }
+  @media (max-width: 700px) {
+    .title{
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    .subtitle{
+        font-weight: normal;
+        font-size: 1em;
+    }
+    .reminder{
+        color: #575757;
+        font-size: 0.5em;
+        font-weight: normal;
+      }
+  }

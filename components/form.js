@@ -96,6 +96,7 @@ class FormComponent extends React.Component{
         <form onSubmit={this.handleSubmit} >
 
       <DataPrivacyConsent/>
+    
 <div className={this.state.step!==1? styles.hide: null}>
 
 <h1 className={styles.sectionTitle}>Personal</h1>
@@ -121,9 +122,11 @@ class FormComponent extends React.Component{
          
         <InputComponent name={'email'} type={'email'} label={'Email Address'}  required onChange={this.handleChange} id = {'email'} value={this.email}/>
 
-
+<div>
 <input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
 <input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
+</div>
+
 </div>
 
 <div className={this.state.step!==3? styles.hide: null}>
@@ -137,9 +140,11 @@ class FormComponent extends React.Component{
       <DayComponent name={'Friday'} id={'Friday'} className={this.state.Friday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
       <DayComponent name={'Saturday'} id={'Saturday'} className={this.state.Saturday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
       <DayComponent name={'Sunday'} id={'Sunday'} className={this.state.Sunday?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
-       
-<input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
+    <div>
+    <input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
 <input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
+      </div>   
+
 </div>
  
 <div className={this.state.step!==4? styles.hide: null}>
@@ -157,9 +162,11 @@ class FormComponent extends React.Component{
 <ActivityTile name={'Data encoding'} id={'DataEncoding'}   className={this.state.DataEncoding?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
 <p>Location: Target areas include malls, churches, LRT, etc. Locations will be determined by organizers! – with snacks and transpo for volunteers! 😊</p>
 <ActivityTile name={'House to house visits to campaign for VP Leni'} id={'HouseToHouse'}   className={this.state.HouseToHouse?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
-
+<div>
 <input type={'button'} value={'Next Step'} className={styles.button} onClick={this.handleChangeStep}/>
 <input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/>  
+</div>
+
 </div>
     
     
@@ -169,16 +176,18 @@ class FormComponent extends React.Component{
 
 <h1 className={styles.sectionTitle}>Willing to support</h1>
 <h1>the TRoPa campaign through other means?</h1>
-<p>Location: Head Quarters @ Cubao – with snacks for volunteers! 😊</p>
+
 <OtherAssistance name={'Monetary donation'} id={'MonetaryDonation'}   className={this.state.MonetaryDonation?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
 <OtherAssistance name={'Campaign materials '} id={'CampaignMaterials'}   className={this.state.CampaignMaterials?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
 <OtherAssistance name={'In-kind (food for volunteers)'} id={'InKind'}   className={this.state.InKind?styles.container_selected: styles.container_unselected} onClick={this.handleDaySelect}/>
 <h3>Others</h3>
 
-    <input type={'textarea'} onChange={this.handleChange} id = {'others'} value = {this.others} className={styles.othersField}/>
+    <textarea  onChange={this.handleChange}  id = {'others'} value = {this.others} className={styles.othersField}/>
    
-  
-     <input type={'submit'} className={styles.button}/><input type={'button'} className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
+      <div>
+      <input type={'submit'} className={styles.button}/><input type={'button'}  className={styles.button} value={'Previous Step'} onClick={this.handleChangePreviousStep}/> 
+      </div>
+ 
 </div>
 
  
