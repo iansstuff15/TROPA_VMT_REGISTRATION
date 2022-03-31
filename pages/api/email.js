@@ -12,11 +12,9 @@ export default async function handler(req, res) {
   const year = tomorrow.getFullYear()
   const day = tomorrow.getDay()
 const body = JSON.parse(req.body);
-console.log(body.email+ 'body');
 
-console.log(  'user'+process.env.CLIENT_EMAIL)
 
-console.log(  'user'+process.env.CLIENT_PASSWORD,)
+
 const transporter = nodemailer.createTransport(
   {
     service:'gmail',
@@ -102,14 +100,14 @@ await new Promise((resolve, reject) => {
 
 
 await new Promise((resolve, reject) => {
-  console.log('in transporter')
+
   // send mail
   transporter.sendMail(options, (err, info) => {
       if (err) {
           console.error(err);
           reject(err);
       } else {
-          console.log(info);
+ 
           resolve(info);
       }
   });})

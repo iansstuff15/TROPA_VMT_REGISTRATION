@@ -55,17 +55,12 @@ class FormComponent extends React.Component{
     handleChange = async(event) => {
     
         await this.setState({ [event.target.id]: event.target.value });
-        console.log(event.target.id + ' event id')
-        console.log(event.target.value + ' event value')
-            console.log(event.target.name+' '+event.target.value + ' state: '+this.state[event.target.name])
-     await  console.log(this.state)
+       
           };
           handleSubmit = async (event) => {
            
             event.preventDefault();
-            console.log(this.state)
-            console.log(event.target.email.value + ' in submit');
-        
+         
            
             fetch('./api/email',{
               method:'POST',
@@ -76,7 +71,6 @@ class FormComponent extends React.Component{
               body: JSON.stringify(this.state)
             });
          
-            console.log('submitted');
             this.setState({step: this.state.step + 1})
       };
         
@@ -84,7 +78,7 @@ class FormComponent extends React.Component{
    
      const  value =this.state[event.target.id]
    await    this.setState({ [event.target.id]: !value});
-   console.log(this.state)
+ 
     }
     
     
