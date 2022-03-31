@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 export default async function handler(req, res) {
 
-  const tomorrow = new Date(today)
+  const tomorrow = new Date()
   tomorrow.setDate(tomorrow.getDate() + 1)
 
   const month = tomorrow.toLocaleString('default', { month: 'long' });
