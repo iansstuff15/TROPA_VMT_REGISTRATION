@@ -1,6 +1,6 @@
 .container{
     padding: 30px 5vw;
- 
+    
  
 
 }
@@ -36,7 +36,7 @@
    border-radius: 10px;
    line-height: .5;
    width: fit-content;
-   
+  
 }
 .total_container{
     background-color:  #d40867;
@@ -44,6 +44,7 @@
     padding: 5px 40px;
     border-radius: 10px; 
     margin-bottom: 40px;
+    margin-top: 60px;
 }
 .flex_container{
     display: grid;
@@ -60,6 +61,22 @@
     color:  #d40867;
     font-size: 6rem;
     line-height: .5;
-    margin: 0 0 40px 0;
-
+    margin: 0 0 60px 0;
+    
 }
+.button{
+    background-color: #d40867;
+      padding: 20px 40px;
+      font-weight: bold;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+   
+      border: none;
+      font-size: 1em;
+  
+  }
+  .button:hover{
+    background-color: #fc368c;
+  
+  }

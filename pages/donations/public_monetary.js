@@ -4,7 +4,7 @@ import styles from '../../styles/public.module.css'
 import InputComponent from "../../components/input";
 import Header from "../../components/header";
 import Layout from "../../components/layout";
-
+import Link from "next/link";
 export async function getServerSideProps(){
 
     const auth = new google.auth.GoogleAuth({
@@ -60,8 +60,12 @@ const PublicDonations = ({data, total}) =>{
     return(
     <Layout >
  
-        <div><h1 className = {styles.title}>Monetary</h1><br/> <h1 className={styles.subtext}>Donations</h1></div>
-      
+        <div><h1 className = {styles.title}>Monetary</h1><br/> <h1 className={styles.subtext}>Donations</h1>
+        <Link href='./donations_monetary'>
+        <span className={styles.button}>Record Monetary Donation</span>  
+        </Link>
+       </div>
+        
         {console.log(data)}
         <div className={styles.total_container}>
         <h1>Total</h1>
@@ -69,7 +73,7 @@ const PublicDonations = ({data, total}) =>{
         </div>
   <div className={styles.flex_container}>
         {data.map((data,index)=>(
-            <div className={styles.cell}>
+            <div className={styles.cell} key={data[0]}>
             <div className={styles.RID}>
                 <h2 className={styles.title}>RID</h2>
                 <h3 className={styles.content}>{data[0]}</h3>

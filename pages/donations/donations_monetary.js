@@ -1,8 +1,10 @@
 import React from "react";
 import InputComponent from "../../components/input"
-import styles from '../styles/donations.module.css'
-import encrypt from 'crypto-js'
 
+import encrypt from 'crypto-js'
+import Layout from "../../components/layout";
+import styles from '../../styles/donations.module.css'
+import Thankyou from "../../components/thankyou";
 const encryptAlgorithm = encrypt
 
 class Donations extends React.Component{
@@ -19,6 +21,7 @@ class Donations extends React.Component{
             date_recieved: "",
             screenshot: "",
             RID: '',
+            step:1,
         }
     }
  
@@ -46,7 +49,7 @@ class Donations extends React.Component{
             //   method:'POST',
             //   body: JSON.stringify(this.state)
             // });
-            fetch('./api/donations_monetary',{
+            fetch('../api/donations_monetary',{
               method:'POST',
               body: JSON.stringify(this.state)
             });
@@ -58,29 +61,39 @@ class Donations extends React.Component{
 
    render(){ return(
     <>
-        <div className={styles.container}>
-            <h1>Record</h1>
-            <h2>Donation</h2>
+        <Layout>
+     {   this.state.step ==1? <>   <h1 className={styles.title}>Record Your</h1>
+            <h2 className={styles.subtext}>Monetary Donation</h2>
             <form onSubmit={this.handleSubmit}>
+        <div className={styles.RID_container}>
         <h1>RID <br/>{this.state.RID}</h1>
+        </div>
+
         <InputComponent name={'firstName'} type={'text'}  label={'First Name'} required onChange={this.handleChange} id = {'firstName'} value = {this.firstName}/>
         <InputComponent name={'lastName'} type={'text'}  label={'Last Name'}required onChange={this.handleChange} id = {'lastName'} value = {this.lastName}/>
         <InputComponent name={'phone'} type={'number'}  label={'Contact Number'}required onChange={this.handleChange} id = {'phone'} value = {this.phone}/>
          <InputComponent name={'email'} type={'email'} label={'Email Address'}  required onChange={this.handleChange} id = {'email'} value={this.email}/>
         <h3>Deposited to</h3>
-         <select name="mode" id="mode" value={this.mode} onChange={this.handleChange}>
-            <option value="Gcash">Gcash</option>
-            <option value="Landbank">Landbank</option>
-            <option value="BDO">BDO</option>
+         <select name="mode" id="mode" value={this.mode} onChange={this.handleChange} className={styles.select}>
+            <option value="Gcash" className={styles.option}>Gcash</option>
+            <option value="Landbank" className={styles.option}>Landbank</option>
+            <option value="BDO" className={styles.option}>BDO</option>
         </select>
         <InputComponent name={'referenceNumber'} type={'number'}  label={'Reference Number'}required onChange={this.handleChange} id = {'RefNum'} value = {this.RefNum}/>
          <InputComponent name={'amount'} type={'number'}  label={'Donated Amount'}required onChange={this.handleChange} id = {'amount'} value = {this.amount}/>
          <InputComponent name={'date_recieved'} type={'date'}  label={'Date Recieved'}required onChange={this.handleChange} id = {'date_recieved'} value = {this.date_recieved}/>
-  
-
-                <input type={'submit'}/>
+        
+<div>
+<input type={'submit'} className={styles.button}/>
+</div>
+              
             </form>
-        </div>
+            </>
+:
+<Thankyou reason={'your monetary donation'} toNavigate={'/'} buttonText={'Go back to mainpage'}/>
+
+            }
+        </Layout>
     </>
 )}}
 
