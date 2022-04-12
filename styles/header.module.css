@@ -1,0 +1,13 @@
+.header{
+    display: inline-block;
+    width: 100%;
+}
+.navigation_link{
+    margin: 0 10px;
+    padding: 8px 20px;
+    float: right;
+
+}
+.navigation_link:hover{
+    color: #d40867;
+}

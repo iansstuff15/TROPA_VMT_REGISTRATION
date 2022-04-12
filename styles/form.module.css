@@ -23,7 +23,11 @@ font-size: 3em;
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 40px;
-  }.container_unselected{
+  }
+  .button:hover{
+    background-color: #96074a;
+  }
+.container_unselected{
     background-color: #c0c0c0;
     display: inline-block;
     margin: 10px 10px 10px 0;

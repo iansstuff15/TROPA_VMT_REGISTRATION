@@ -30,14 +30,66 @@ export default async function handler(req, res) {
    await googleSheets.spreadsheets.values.append({
        auth,
        spreadsheetId,
-       range:'Sheet1!A2',
+       range:'Master!A2',
        valueInputOption: 'USER_ENTERED',
        resource: {
            values:[[
-            body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday,body.landyardMaking,body.tarpPrintingAndCutting,body.TshirtPrinting,body.MuralPainting,body.DataEncoding,body.HouseToHouse,body.MonetaryDonation,body.CampaignMaterials,body.InKind,body.others,now
+            body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday,body.landyardMaking,body.tarpPrintingAndCutting,body.TshirtPrinting,body.MuralPainting,body.DataEncoding,body.HouseToHouse,body.MonetaryDonation,body.CampaignMaterials,body.InKind,body.others,now, body.Apr6, body.Apr7, body.Apr12, body.Apr13, body.Apr20, body.Apr21, body.Apr27,body.Apr28,body.Apr29, body.Apr3, body.Apr9,body.Apr10,body.Apr23,body.Apr24,body.Apr30
            ]]
        }
    })
+
+
+
+   if(body.HouseToHouse){
+    await googleSheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range:'HouseToHouse!A2',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+            values:[[
+                body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday,]]
+        }
+    })
+   }
+   if(body.DataEncoding){
+    await googleSheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range:'DataEncoding!A2',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+            values:[[
+                body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday,]]
+        }
+    })
+   }
+   if(body.TshirtPrinting|| body.landyardMaking || body.tarpPrintingAndCutting){
+    await googleSheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range:'HQActivities!A2',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+            values:[[
+                body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday,]]
+        
+        }
+    })
+   }
+   if(body.MuralPainting){
+    await googleSheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range:'Mural!A2',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+            values:[[
+             body.firstName,body.lastName,body.email,body.age,body.phone,body.Barrangay,body.City,body.Monday,body.Tuesday,body.Wednesday,body.Thursday,body.Friday,body.Saturday,body.Sunday,]]
+        }
+    })
+   }
     res.status(200).json({ name: 'John Doe' })
   }
   

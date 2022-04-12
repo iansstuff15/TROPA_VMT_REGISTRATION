@@ -1,0 +1,23 @@
+.albumContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+}
+.subtext{
+    color: #d40867;
+    font-size: 6em;
+    line-height: .6;
+    margin: 0;
+  
+}
+.title{
+    font-size: 3em;
+    margin: 0;
+    
+}
+.city{
+    color: #047488;
+    font-size:3em
+;}

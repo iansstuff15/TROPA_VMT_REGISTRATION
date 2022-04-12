@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <style>
+ 
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600;800;900&display=swap');
+        h1{
+            font-family: 'Raleway', sans-serif;
+            font-weight: bolder;
+         color: #fc368c;
+        }
+        .greetings{
+            color: black;
+            margin-top: 30px;
+        }
+        p{
+            font-weight: normal;
+            font-family: 'Raleway', sans-serif;
+            text-align: justify;
+            background-color: white;
+            margin: 40px 0;
+            text-decoration: none;
+        }
+        .button{
+            font-weight: bolder;
+            font-family: 'Raleway', sans-serif;
+            text-decoration: none;
+            background-color: #fc368c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: inline-block;
+            height: 100%;
+            margin-bottom: 20px;
+        
+        }
+        .pink_highlight{
+            font-weight: bolder;
+            font-family: 'Raleway', sans-serif;
+            text-decoration: none;
+            background-color: #fc368c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: inline-block;
+            
+            width: 90%;
+        }
+        .grey_highlight{
+            font-weight: bolder;
+            font-family: 'Raleway', sans-serif;
+            text-decoration: none;
+            background-color: #EDEDED;
+            margin-bottom: 10px;
+  
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: inline-flex;
+            margin-right: 10px;            
+        }
+        .RID{
+            font-weight: bolder;
+            font-family: 'Raleway', sans-serif;
+            text-decoration: none;
+            background-color: #008F8D;
+            color: white;
+            margin-bottom: 10px;
+          
+            padding: 20px;
+            border-radius: 10px;
+            
+            word-break: break-all;
+            width: 40%;
+            display: inline-flex;
+            margin-top: 20px;      
+
+          float: right;
+          
+        }
+        .green_highlight{
+            font-weight: bolder;
+            font-family: 'Raleway', sans-serif;
+            text-decoration: none;
+            background-color: #00C785;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: inline-flex;
+            
+            
+        }
+        .logo{
+            max-width: 120px;
+            margin-top: 20px;
+           
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        border: 0;
+        }
+        .hero{
+            width: 100%;
+            border-radius: 25px;
+            margin-top: 10px;
+        }
+        body{
+            background-color: #ffd7ea;
+            background-image: url('https://i.ibb.co/1Rkw4G7/Whats-App-Image-2022-03-27-at-1-22-30-AM.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            background-blend-mode:luminosity;
+        font-size: 1em;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 4%;
+        }
+        header{
+            
+            width: 98%;
+        }
+        .email{
+            background-color: white;
+            border-radius: 15px;
+            padding: 0 9% 10% 9%;
+            overflow: hidden;
+        }
+        .emoji{
+            width: 20%;
+            margin: 0 30px;
+            display: inline-block;
+        }
+        .right{
+            transform: scaleX(-1);
+        }
+        .bottom-container{
+            display: inline-block;         /* NEW, Spec - Firefox, Chrome, Opera */ 
+            
+        }
+        .FB{
+          
+            font-weight: bolder;
+            font-family: 'Raleway', sans-serif;
+            text-decoration: none;
+            background-color: #EDEDED;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+         
+          
+            margin-top: 40px;
+            margin-right: 10px;
+        }
+        h2{
+            font-family: 'Raleway', sans-serif;
+        }
+        .date-container{
+            background-color: #fc368c;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px;
+            font-family: 'Raleway', sans-serif;
+            display: inline-block;
+            margin: 20px 10px 0 20px;
+            font-size: 1.5em;
+        }
+        .time-container{
+            background-color: #e3e3e3;
+           
+            padding: 15px;
+            border-radius: 15px;
+            font-family: 'Raleway', sans-serif;
+            display: inline-block;
+            margin: 20px 10px 50px 20px;
+            font-size: 1.5rem;
+            text-align: center;
+            
+        }
+        .conjunction{
+            font-family: 'Raleway', sans-serif;
+            display: inline-block;  
+            margin: 0 20px;
+        }
+        .container{
+            align-content: center;
+            justify-content: center;
+            align-self: center;
+        }
+        th{
+            font-family: 'Raleway', sans-serif;
+            background-color: #fc368c;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        table{
+           border-spacing: 15px;
+           
+        }
+        td{
+            font-family: 'Raleway', sans-serif;
+            padding: 20px;
+            background-color: #e3e3e3;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1em;
+        }
+        .card{
+            
+            background-color: #f7f7f7;
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin-top:25px;
+            overflow: hidden;
+        }
+        .highlightData{
+            font-family: 'Raleway', sans-serif;
+            padding: 20px;
+            background-color: #e3e3e3;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1em;
+            width: 100%;
+        }
+        .position{
+       color: #fc368c;
+        }
+        .blue-card{
+            background-color: #fc368c;
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin-top:25px;
+            overflow: hidden;
+            display: inline-block;
+            margin: 15px 5px;
+        }
+        .emphasis{
+            color:  #fc368c;
+        }
+    </style>
+   
+   
+    <body >
+        <div class="email">
+   
+        <div>
+        <div>
+            <img src="https://i.ibb.co/9rTrMZM/logo.png" alt="logo" class="logo"/>
+            <span class="RID">   RID: 5076569ac0c2132a37b02c289225f6b4279dfd75be6ee29a51edbc83a8e0cb36</span> 
+        </div>
+       
+        <h1 class="greetings">Mabuhay </h1>
+        <h1>Kakampink! 🌺</h1>
+        <p>
+            Maraming salamat sa inyong contribution para sa TRoPa campaign! Makakaasa kayo na ang bawat ambag ay isang hakbang palapit sa Bukas na Kulay Rosas. 
+        </p>
+        
+            <p>Ito po ang magsisilbi bilang Official Acknowledgement ng inyong contribution: 
+            </p>
+            <p>  <span  class="grey_highlight"><strong >Name of giver: </strong> Lorem Ipsum Dolor </span> <span class="grey_highlight"> <strong>Date Received: </strong> April, 12, 2022</span> <br/><span class="pink_highlight"><strong>Amout Recieved: </strong> ₱. 100</span></p>
+          
+            <p></p>
+            <p ></p>
+            <p></p>
+            <p>Makakaasa kayo ng update sa amin sa susunod na mga linggo kung saan napunta ang inyong contributions. Muli, maraming salamat, Kakampink! 
+            </p>
+
+
+            <div ><a href="#" class="button">View donations summary</a></div>
+            <br/>
+            <a href="https://www.facebook.com/solidlenipilipinas" target="_blank"  class="FB">Facebook Page</a>
+            <a href="https://twitter.com/SolidTropaVMT" target="_blank"  class="FB">Twitter Page</a><br/>
+            <p  class="FB">EMAIL: tropa.volunteer.management@gmail.com</p>
+    
+
+   
+        <p class="position"> <strong>Solid Leni Pilipinas-Volunteers Management Team
+</strong></p>
+    
+    </div>
+    </body>
+
+</html>

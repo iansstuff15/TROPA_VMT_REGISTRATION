@@ -1,0 +1,35 @@
+.header{
+    display: inline-block;
+    padding: 20px 5vw;
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,249,252,1) 86%, rgba(252,231,241,1) 100%, rgba(247,221,233,1) 100%);
+    backdrop-filter: saturate(180%) blur(100px);
+}
+.navigation_link{
+    margin: 0 10px;
+    padding: 8px 20px;
+    float: right;
+
+}
+.navigation_link:hover{
+    color: #d40867;
+}
+
+.button{
+    background-color: #d40867;
+      padding: 8px 20px;
+      font-weight: bold;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0 10px;
+      float: right;
+  
+  }
+  .button:hover{
+    background-color: #fc368c;
+  
+  }

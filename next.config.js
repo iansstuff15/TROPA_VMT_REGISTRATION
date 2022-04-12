@@ -4,7 +4,10 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     BASE_URL: process.env.BASE_URL,
-  }
+  },
+  images: {
+    domains: ['i.ibb.co'],
+},
   // webpack: (config, { isServer }) => {
   //   // Fixes npm packages that depend on `fs` module
   //   if (!isServer) {
