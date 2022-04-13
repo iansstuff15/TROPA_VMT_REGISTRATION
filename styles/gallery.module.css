@@ -17,3 +17,14 @@
     margin: 0;
     
 }
+@media (max-width: 1052px) {
+    .albumContainer{
+     display: inline-block;
+    }
+    .subtext{
+        font-size: 4em;
+        line-height: 1;
+        margin-bottom: 40px;
+    
+    }
+  }

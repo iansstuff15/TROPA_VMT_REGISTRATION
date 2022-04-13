@@ -80,3 +80,21 @@
     background-color: #fc368c;
   
   }
+
+  @media (max-width: 1051px) { 
+    .flex_container{
+        display: block
+    }
+
+    .cell{
+      margin-bottom: 40px;
+    }
+    .subtext{
+        color:  #d40867;
+        font-size: 3em;
+       
+        
+    }
+
+  }
+

@@ -1,6 +1,9 @@
 .container{
     padding: 20vh 5vw;
     background: rgb(255,255,255);
+
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,249,252,1) 86%, rgba(252,231,241,1) 100%, rgba(247,221,233,1) 100%);
+    
     min-height: 100vh;
+
 }

@@ -66,7 +66,7 @@ class Donations extends React.Component{
             <h2 className={styles.subtext}>Monetary Donation</h2>
             <form onSubmit={this.handleSubmit}>
         <div className={styles.RID_container}>
-        <h1>RID <br/>{this.state.RID}</h1>
+        <p><strong>RID</strong> <br/>{this.state.RID}</p>
         </div>
 
         <InputComponent name={'firstName'} type={'text'}  label={'First Name'} required onChange={this.handleChange} id = {'firstName'} value = {this.firstName}/>

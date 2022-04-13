@@ -24,7 +24,7 @@
       color: white;
       border-radius: 10px;
       cursor: pointer;
-      margin: 0 10px;
+    
       float: right;
       border: none;
       font-size: 1em;
@@ -36,17 +36,32 @@
   }
   .select{
       padding: 20px 17.5vw;
+      width: 40vw;
       background-color: #c0c0c0;
       font-weight: bold;
       border-radius: 10px;
       border: none;
+      text-align: center;
       margin: 20px 0;
   }
   .option{
     font-weight: bold;
+
     border-radius: 10px;
   
   }
   .option:focus{
     background-color: #fc368c;
+}
+@media (max-width: 752px) {
+  .select {
+      width: 100%;
+      
+  }
+  .subtext{
+    font-size: 4em;
+    line-height: 1;
+
+
+}
 }

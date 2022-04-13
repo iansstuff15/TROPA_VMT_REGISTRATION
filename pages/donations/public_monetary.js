@@ -5,8 +5,11 @@ import InputComponent from "../../components/input";
 import Header from "../../components/header";
 import Layout from "../../components/layout";
 import Link from "next/link";
-export async function getServerSideProps(){
 
+
+export async function getServerSideProps(){
+    var data = []
+    var total = []
     const auth = new google.auth.GoogleAuth({
      
         credentials: {
@@ -42,10 +45,21 @@ const total_response =  await googleSheets.spreadsheets.values.get({
    
 
 })
-const data = data_response.data.values
-const total = total_response.data.values
+ data= data_response.data.values
+ total = total_response.data.values
 await console.log(data +'data')
-    return{
+
+if(data == null){
+
+return{
+    props:{
+        data: null,
+        total: null
+    }
+}
+}
+
+return{
 props:{
     data,
     total
@@ -69,14 +83,15 @@ const PublicDonations = ({data, total}) =>{
         {console.log(data)}
         <div className={styles.total_container}>
         <h1>Total</h1>
-        <h1 className={styles.demonination}>₱ {total}</h1>
+        <h1 className={styles.demonination}> {total != null ? `₱ ${total}`: 'no donations yet'}</h1>
         </div>
   <div className={styles.flex_container}>
-        {data.map((data,index)=>(
+        { data != null? data.map((data,index)=>(
             <div className={styles.cell} key={data[0]}>
             <div className={styles.RID}>
                 <h2 className={styles.title}>RID</h2>
-                <h3 className={styles.content}>{data[0]}</h3>
+                <p className={styles.content}>{data[0]}</p>
+                <p><strong>Date Recieved:</strong> {data[2]}</p>
                 </div>
             <div className={styles.amount}>
             <h3>Amount</h3>
@@ -87,7 +102,10 @@ const PublicDonations = ({data, total}) =>{
 
             </div>
 
-        ))}
+        ))
+            : 
+            null
+    }
         </div>
     </Layout>
 )}

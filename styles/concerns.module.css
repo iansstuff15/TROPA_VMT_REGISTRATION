@@ -48,3 +48,16 @@ border: none;
   font-weight: bold;
   line-height: 0.1;
 }
+@media (max-width: 752px) {
+
+  .subtext{
+    font-size: 4em;
+    line-height: 1;
+
+
+}
+.concern{
+  width: 100%;
+  height: 30vh;
+}
+}
