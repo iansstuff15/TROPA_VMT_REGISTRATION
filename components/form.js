@@ -33,7 +33,7 @@ class FormComponent extends React.Component{
         Friday: false,
         Saturday: false,
         Sunday: false,
-        step:6,
+        step:1,
         isSelected: false,
         landyardMaking:false,
         tarpPrintingAndCutting: false,

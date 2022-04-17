@@ -19,8 +19,9 @@
 
 .container_vertical_center{
   z-index: 1;
-
-  padding: 25% 5vw;
+  position: absolute;
+  top: 50%;
+  padding: 0 5vw;
   
 }
 .button{
@@ -50,3 +51,16 @@ line-height: 1;
   color: #d40867;
 }
 
+@media (max-width: 1052px) {
+  .title{
+    font-size: 1em;
+    line-height: 0.1;
+    font-weight:normal;
+    }
+    .title_emphasis{
+   
+    font-size: 3em;
+    line-height: 1;
+    }
+
+}
