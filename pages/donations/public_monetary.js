@@ -47,7 +47,7 @@ const total_response =  await googleSheets.spreadsheets.values.get({
 })
  data= data_response.data.values
  total = total_response.data.values
-await console.log(data +'data')
+
 
 if(data == null){
 
@@ -76,11 +76,11 @@ const PublicDonations = ({data, total}) =>{
  
         <div><h1 className = {styles.title}>Monetary</h1><br/> <h1 className={styles.subtext}>Donations</h1>
         <Link href='./donations_monetary'>
-        <span className={styles.button}>Record Monetary Donation</span>  
+        <span className={styles.button}>Donate Now!</span>  
         </Link>
        </div>
         
-        {console.log(data)}
+     
         <div className={styles.total_container}>
         <h1>Total</h1>
         <h1 className={styles.demonination}> {total != null ? `₱ ${total}`: 'no donations yet'}</h1>
@@ -89,8 +89,8 @@ const PublicDonations = ({data, total}) =>{
         { data != null? data.map((data,index)=>(
             <div className={styles.cell} key={data[0]}>
             <div className={styles.RID}>
-                <h2 className={styles.title}>RID</h2>
-                <p className={styles.content}>{data[0]}</p>
+                {/* <h2 className={styles.title}>RID</h2>
+                <p className={styles.content}>{data[0]}</p> */}
                 <p><strong>Date Recieved:</strong> {data[2]}</p>
                 </div>
             <div className={styles.amount}>

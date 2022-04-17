@@ -68,20 +68,20 @@ const PublicDonations = ({data, total}) =>{
  
         <div><h1 className = {styles.title}>In-Kind</h1><br/> <h1 className={styles.subtext}>Donations</h1>
         <Link href='./donations_in_kind'>
-        <span className={styles.button}>Record In-Kind Donation</span>  
+        <span className={styles.button}>Donate Now!</span>  
         </Link>
        </div>
        
         <div className={styles.total_container}>
         <h1>Total</h1>
-        <h1 className={styles.demonination}>{data!=null?data.length: 'no donations yet'} donations</h1>
+        <h1 className={styles.demonination}>{data!=null?data.length + 'donations': ' '} </h1>
         </div>
   <div className={styles.flex_container}>
         { data!=null? data.map((data,index)=>(
             <div className={styles.cell} key={data[0]}>
             <div className={styles.RID}>
-                <h2 className={styles.title}>RID</h2>
-                <h3 className={styles.content}>{data[0]}</h3>
+                {/* <h2 className={styles.title}>RID</h2>
+                <h3 className={styles.content}>{data[0]}</h3> */}
                 
                 </div>
             <div className={styles.amount}>

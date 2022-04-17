@@ -7,9 +7,13 @@ import Thankyou from "./thankyou";
 import DayComponent from "./day";
 import ActivityTile from "./acitivity_tile";
 import OtherAssistance from "./other_assitance";
+import { ToastContainer, toast } from 'material-react-toastify';
+import 'material-react-toastify/dist/ReactToastify.css';
 
 
 class FormComponent extends React.Component{
+  
+
   
     constructor() {
         super();
@@ -29,7 +33,7 @@ class FormComponent extends React.Component{
         Friday: false,
         Saturday: false,
         Sunday: false,
-        step:1,
+        step:6,
         isSelected: false,
         landyardMaking:false,
         tarpPrintingAndCutting: false,
@@ -60,8 +64,25 @@ class FormComponent extends React.Component{
         };
       }
 
+    notify = (message) => toast.error(message);
+
     handleChangeStep=()=>{
       this.setState({step: this.state.step + 1})
+    if(this.state.step >=1){
+      if(this.state.firstName == '' || this.state.lastName =='' || this.state.age =='' || this.state.Barrangay ==''|| this.state.City ==''){
+
+        this.notify(`incomplete form please fill up fields in personal information`)
+      }
+
+  
+    }
+      if(this.state.step >=2){
+        if(this.state.phone ==''||this.state.email ==''){
+
+          this.notify(`incomplete form please fill up fields in contact information`)
+        }
+      }
+      
     }
     handleChangePreviousStep=()=>{
       this.setState({step: this.state.step - 1})
@@ -104,8 +125,12 @@ class FormComponent extends React.Component{
      
     this.state.step !== 6?
     <div>
-        <form onSubmit={this.handleSubmit} >
 
+        <form onSubmit={this.handleSubmit} >
+     <div>
+       
+        <ToastContainer />
+      </div>
       <DataPrivacyConsent/>
     
 <div className={this.state.step!==1? styles.hide: null}>

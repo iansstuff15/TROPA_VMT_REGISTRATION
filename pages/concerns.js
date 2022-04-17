@@ -18,7 +18,7 @@ class Concerns extends React.Component{
     handleChange = async(event) => {
     
         await this.setState({ [event.target.id]: event.target.value });
-        await console.log(this.state[event.target.id] + ' state')
+ 
           };
          handleSubmit = async (event) => {
            

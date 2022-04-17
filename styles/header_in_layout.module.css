@@ -40,7 +40,7 @@
     float: right;
   }
   .bar{
-      position: fixed;
+      position: fixed ;
       height: 100vh;
       text-align: left;
   

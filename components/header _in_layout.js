@@ -17,7 +17,7 @@ const Header = () => {
     useEffect(() => {
         
       window.addEventListener("resize", updateMedia);
-      console.log("window.innerWidth", window.innerWidth);
+
 
 
   
@@ -29,7 +29,7 @@ const Header = () => {
     const handleClick = () => {
         // setOpen()
         setOpen(!isOpen)
-        console.log('clicked' + isOpen)
+       
     }
 
 

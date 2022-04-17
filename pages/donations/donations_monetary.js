@@ -34,10 +34,9 @@ class Donations extends React.Component{
 
      const encryptertext =   await   encryptAlgorithm.SHA256(this.state['RID']).toString()
      await this.setState({RID:null})
-     await console.log(this.state.RID)
+   
      await this.setState({RID: encryptertext})
-        await console.log(this.state[event.target.id] + ' state')
-        await console.log(this.state)
+  
           };
 
     handleSubmit = async (event) => {
@@ -77,11 +76,11 @@ class Donations extends React.Component{
          <select name="mode" id="mode" value={this.mode} onChange={this.handleChange} className={styles.select}>
             <option value="Gcash" className={styles.option}>Gcash</option>
             <option value="Landbank" className={styles.option}>Landbank</option>
-            <option value="BDO" className={styles.option}>BDO</option>
+            <option value="BPI" className={styles.option}>BPI</option>
         </select>
         <InputComponent name={'referenceNumber'} type={'number'}  label={'Reference Number'}required onChange={this.handleChange} id = {'RefNum'} value = {this.RefNum}/>
          <InputComponent name={'amount'} type={'number'}  label={'Donated Amount'}required onChange={this.handleChange} id = {'amount'} value = {this.amount}/>
-         <InputComponent name={'date_recieved'} type={'date'}  label={'Date Recieved'}required onChange={this.handleChange} id = {'date_recieved'} value = {this.date_recieved}/>
+         <InputComponent name={'date_recieved'} type={'date'}  label={'Date Donated'}required onChange={this.handleChange} id = {'date_recieved'} value = {this.date_recieved}/>
         
 <div>
 <input type={'submit'} className={styles.button}/>

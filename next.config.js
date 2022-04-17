@@ -6,8 +6,12 @@ const nextConfig = {
     BASE_URL: process.env.BASE_URL,
   },
   images: {
-    domains: ['i.ibb.co'],
+    domains: ['i.ibb.co', 'ibb.co'],
+
 },
+  rules: {
+  "react/jsx-no-duplicate-props": [1, { "ignoreCase": false }]
+}
   // webpack: (config, { isServer }) => {
   //   // Fixes npm packages that depend on `fs` module
   //   if (!isServer) {

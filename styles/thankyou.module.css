@@ -52,3 +52,16 @@
         font-weight: normal;
       }
   }
+  .albumContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+}
+  @media (max-width: 1052px) {
+    .albumContainer{
+     display: inline-block;
+    }
+ 
+  }
