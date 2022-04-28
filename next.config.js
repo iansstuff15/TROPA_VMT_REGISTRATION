@@ -6,7 +6,7 @@ const nextConfig = {
     BASE_URL: process.env.BASE_URL,
   },
   images: {
-    domains: ['i.ibb.co', 'ibb.co'],
+    domains: ['i.ibb.co', 'ibb.co','images.pexels.com'],
 
 },
   rules: {

@@ -16,7 +16,7 @@ class Gallery extends React.Component{
     handleChange = async(event) => {
     
         await this.setState({ [event.target.id]: event.target.value });
-     
+        
           };
 
 

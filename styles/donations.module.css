@@ -2,13 +2,58 @@
     font-size: 2em;
     margin: 0;
 }
+.shirt_container{
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 19px;
+    grid-row-gap: 0px;
+    
+}
+.chip{
+  border-radius: 6px;
+  margin-top: 30px;
+}
 .subtext{
     color:  #d40867;
     font-size: 5rem;
     line-height: .7;
     margin: 0 0 40px 0;
+  }
+  .color_picker_unselected{
+    margin-right: 10px;
+    background-color: #c0c0c0;
+    padding:  20px;
+    border-radius: 10px;
+    
+    cursor: pointer;
+  }
+  .color_picker_selected{
+    margin-right: 10px;
+    background-color: #d40867;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
 
-}
+    cursor: pointer;
+  }
+  .shirt_image{
+      background-color: #c0c0c0;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+  .options_container{
+  
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 10px;
+      
+  }
+  
 .RID_container{
     background-color: #d40867;
     color: white;
@@ -16,6 +61,7 @@
     margin: 0 0 30px 0;
     word-break: break-all;
     border-radius: 10px;
+    width: 40vw;
 }
 .button{
     background-color: #d40867;
@@ -54,7 +100,47 @@
   .option:focus{
     background-color: #fc368c;
 }
+
+.landBank_card{
+  background-color: rgb(23, 121, 213);
+  color: white;
+  padding: 20px 80px 10px 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+.text{
+  margin: 0;
+}
+.BPI_card{
+  background-color: rgb(197, 84, 43);
+  color: white;
+  padding: 20px 80px 10px 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+.Gcash_card{
+  background-color: rgb(44, 66, 141);
+  color: white;
+  padding: 20px 80px 10px 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+}
 @media (max-width: 752px) {
+  .landBank_card{
+ 
+    width: 100%;
+  }
+  .BPI_card{
+ 
+    width: 100%;
+  }
+  .Gcash_card{
+ 
+    width: 100%;
+  }
   .select {
       width: 100%;
       
@@ -65,4 +151,16 @@
 
 
 }
+
+}
+
+@media (max-width: 1052px) {
+  .RID_container {
+      width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .shirt_container {
+     display: block;
+  }
 }

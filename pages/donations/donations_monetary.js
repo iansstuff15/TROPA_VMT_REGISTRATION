@@ -73,6 +73,23 @@ class Donations extends React.Component{
         <InputComponent name={'phone'} type={'number'}  label={'Contact Number'}required onChange={this.handleChange} id = {'phone'} value = {this.phone}/>
          <InputComponent name={'email'} type={'email'} label={'Email Address'}  required onChange={this.handleChange} id = {'email'} value={this.email}/>
         <h3>Deposited to</h3>
+        <div className={styles.landBank_card}>
+        <h5 className={styles.text}>Landbank of the Philippines</h5>
+        <h5 className={styles.text}>Marita Margaret Ortega</h5>
+        <h4 className={styles.text}>3347021708</h4>
+        </div>
+        <div className={styles.BPI_card}>
+
+        <h5 className={styles.text}>BPI</h5>
+        <h5 className={styles.text}>Juan Lorenzo S Cruz</h5>
+        <h4 className={styles.text}>4289153727</h4>
+        </div>
+        <div className={styles.Gcash_card}>
+            
+        <h5 className={styles.text}>GCASH</h5>
+        <h5 className={styles.text}>Diriangen Lempira Powell</h5>
+        <h4 className={styles.text}>09274552015</h4>
+        </div>
          <select name="mode" id="mode" value={this.mode} onChange={this.handleChange} className={styles.select}>
             <option value="Gcash" className={styles.option}>Gcash</option>
             <option value="Landbank" className={styles.option}>Landbank</option>

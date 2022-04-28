@@ -46,10 +46,11 @@ const Header = () =>{
        <>
        
          <Link href={'/concerns'} ><strong className={styles.navigation_link}>Concerns</strong></Link>
+         <Link href={'/get_shirt'} ><strong className={styles.navigation_link}>AngatLeta Shirt</strong></Link>
           <Link href={'/donations/public_monetary'} ><strong className={styles.navigation_link}>Monetary Donations</strong></Link>
           <Link href={'/donations/public_in_kind'} ><strong className={styles.navigation_link}>In-Kind Donations</strong></Link>
           <Link href={'/gallery'} ><strong className={styles.navigation_link}>Gallery</strong></Link>
-          <Link href={'/'} ><strong className={styles.navigation_link}>Home</strong></Link>
+     
        </>
      }
       
@@ -72,7 +73,7 @@ const Header = () =>{
         
           <Link href={'/donations/public_monetary'} ><strong className={styles.links_in_bar}>Monetary Donations</strong></Link>
           <Link href={'/donations/public_in_kind'} ><strong className={styles.links_in_bar}>In-Kind Donations</strong></Link>
-         
+          <Link href={'/get_shirt'} ><strong className={styles.links_in_bar}>AngatLeta Shirt</strong></Link>
           <Link href={'/concerns'} ><strong className={styles.links_in_bar}>Concerns</strong></Link>
      </div> :null}
     </>

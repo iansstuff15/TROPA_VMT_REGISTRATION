@@ -9,7 +9,12 @@ const AlbumCard = ({title,date,images, link})=>{
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.date}>{date}</h2>
         <div className={styles.image_grid}>
-            {images.map((image)=>(  <Image src={image} height={200} width={200} objectFit='cover' className={styles.image} key={image}/>))}
+            
+            {images.map((image)=>( 
+                <span className={styles.image_container} key={image}>
+                       <Image src={image} height={200} width={200} objectFit='cover' className={styles.image}  />
+                </span>
+             ))}
           
         </div>
     </div>
