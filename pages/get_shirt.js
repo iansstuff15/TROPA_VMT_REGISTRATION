@@ -121,7 +121,7 @@ null
 <div>
 <div>
     <div>
-    <Image src={this.state.shirt == 'front'?  this.state.white_front:this.state.white_back} width={500} height={600} objectFit='cover' className={styles.shirt_image}/>
+    <Image src={this.state.shirt == 'front'?  this.state.white_front:this.state.white_back} width={700} height={900}  objectFit='cover' className={styles.shirt_image}/>
     </div>
     
     <Image src={this.state.white_front} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
@@ -136,7 +136,7 @@ null
 <div>
 <div>
     <div>
-    <Image src={this.state.shirt == 'front'?  this.state.black_one_pink_fight:this.state.black_back} width={500} height={600} objectFit='cover' className={styles.shirt_image}/>
+    <Image src={this.state.shirt == 'front'?  this.state.black_one_pink_fight:this.state.black_back}width={700} height={900}  objectFit='cover' className={styles.shirt_image}/>
     </div>
     
     <Image src={this.state.black_one_pink_fight} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
@@ -151,7 +151,7 @@ null
 <div>
 <div>
     <div>
-    <Image src={this.state.shirt == 'front'?  this.state.black_v2_one_pink_fight:this.state.black_back} width={500} height={600} objectFit='cover' className={styles.shirt_image}/>
+    <Image src={this.state.shirt == 'front'?  this.state.black_v2_one_pink_fight:this.state.black_back} width={700} height={900} objectFit='cover' className={styles.shirt_image}/>
     </div>
     
     <Image src={this.state.black_v2_one_pink_fight} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
@@ -166,7 +166,7 @@ null
 <div>
 <div>
     <div>
-    <Image src={this.state.shirt == 'front'?  this.state.white_one_pink_fight:this.state.black_back} width={500} height={600} objectFit='cover' className={styles.shirt_image}/>
+    <Image src={this.state.shirt == 'front'?  this.state.white_one_pink_fight:this.state.black_back} width={700} height={900} objectFit='cover' className={styles.shirt_image}/>
     </div>
     
     <Image src={this.state.white_one_pink_fight} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
