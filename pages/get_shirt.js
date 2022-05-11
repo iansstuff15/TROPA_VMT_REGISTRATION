@@ -12,8 +12,7 @@ import PhotoCarousel from "../components/photo_carousel";
 class GetShirt extends React.Component{
     
     
-
-
+   
 
     constructor(){
         super()
@@ -40,9 +39,16 @@ class GetShirt extends React.Component{
             black_one_pink_fight:'https://i.ibb.co/02zyyBv/ANG-ATLETA-SHIRT-MOCKUP-ONEPINKFIGHT-BLACK-FRONT-ONLY.png',
             black_v2_one_pink_fight:'https://i.ibb.co/GWkTC79/ANG-ATLETA-SHIRT-MOCKUP-ONEPINKFIGHT-BLACK-V2.png',
             white_one_pink_fight:'https://i.ibb.co/vVtZ3XQ/ANG-ATLETA-SHIRT-MOCKUP-ONEPINKFIGHT-WHITE-FRONT-ONLY-WHITEBG.png',
+            black_angatleta_total: [],
+            white_angatleta_total: [],
+            black_OnePinkFight_total: [],
+            white_OnePinkFight_total: [],
         }
     }
- 
+
+    
+    
+    
     handleChange = async(event) => {
         
         await this.setState({ [event.target.id]: event.target.value });
@@ -58,7 +64,10 @@ class GetShirt extends React.Component{
           };
     handleColorSwitch = async(event) => {
         event.preventDefault();
-        await this.setState({ color: event.target.id });
+        if(event.target.id!=''){
+            await this.setState({ color: event.target.id });
+        }
+      
         await console.log(this.state)
     }
     handleImageSwitch = async(event) => {
@@ -94,7 +103,7 @@ class GetShirt extends React.Component{
     <>
         <Layout>
      {   this.state.step ==1? <>   <h1 className={styles.title}>Order Your</h1>
-            <h2 className={styles.subtext}>Angatleta Shirt</h2>
+            <h2 className={styles.subtext}>ANGATLETA SHIRT!</h2>
             <form onSubmit={this.handleSubmit}>
      
 <br/>
@@ -106,7 +115,7 @@ class GetShirt extends React.Component{
 <div>
 <div>
     <div>
-    <Image src={this.state.shirt == 'front'?  this.state.black_front:this.state.black_back} width={700} height={900} objectFit='cover' className={styles.shirt_image}/>
+    <Image src={this.state.shirt == 'front'?  this.state.black_front:this.state.black_back} quality={100} width={700} height={900} objectFit='cover' className={styles.shirt_image}/>
     </div>
     
     <Image src={this.state.black_front} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
@@ -121,7 +130,7 @@ null
 <div>
 <div>
     <div>
-    <Image src={this.state.shirt == 'front'?  this.state.white_front:this.state.white_back} width={700} height={900}  objectFit='cover' className={styles.shirt_image}/>
+    <Image src={this.state.shirt == 'front'?  this.state.white_front:this.state.white_back} quality={100}  width={700} height={900}  objectFit='cover' className={styles.shirt_image}/>
     </div>
     
     <Image src={this.state.white_front} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
@@ -132,26 +141,27 @@ null
 </div>:
 null
   }
+  {    
+//   this.state.color =='Black_OnePinkFight'?
+// <div>
+// <div>
+//     <div>
+//     <Image src={this.state.shirt == 'front'?  this.state.black_one_pink_fight:this.state.black_back} quality={100}  width={700} height={900}  objectFit='cover' className={styles.shirt_image}/>
+//     </div>
+    
+//     <Image src={this.state.black_one_pink_fight} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
+//     {/* <Image src={this.state.black_back} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="back" onClick={this.handleImageSwitch}/> */}
+//     </div>
+  
+//     <br/>
+// </div>:
+// null
+  }
   {    this.state.color =='Black_OnePinkFight'?
 <div>
 <div>
     <div>
-    <Image src={this.state.shirt == 'front'?  this.state.black_one_pink_fight:this.state.black_back}width={700} height={900}  objectFit='cover' className={styles.shirt_image}/>
-    </div>
-    
-    <Image src={this.state.black_one_pink_fight} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
-    {/* <Image src={this.state.black_back} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="back" onClick={this.handleImageSwitch}/> */}
-    </div>
-  
-    <br/>
-</div>:
-null
-  }
-  {    this.state.color =='Black2_OnePinkFight'?
-<div>
-<div>
-    <div>
-    <Image src={this.state.shirt == 'front'?  this.state.black_v2_one_pink_fight:this.state.black_back} width={700} height={900} objectFit='cover' className={styles.shirt_image}/>
+    <Image src={this.state.shirt == 'front'?  this.state.black_v2_one_pink_fight:this.state.black_back} quality={100}  width={700} height={900} objectFit='cover' className={styles.shirt_image}/>
     </div>
     
     <Image src={this.state.black_v2_one_pink_fight} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
@@ -166,7 +176,7 @@ null
 <div>
 <div>
     <div>
-    <Image src={this.state.shirt == 'front'?  this.state.white_one_pink_fight:this.state.black_back} width={700} height={900} objectFit='cover' className={styles.shirt_image}/>
+    <Image src={this.state.shirt == 'front'?  this.state.white_one_pink_fight:this.state.black_back} quality={100}  width={700} height={900} objectFit='cover' className={styles.shirt_image}/>
     </div>
     
     <Image src={this.state.white_one_pink_fight} width={100} height={150} objectFit='cover' className={styles.shirt_image} id="front" onClick={this.handleImageSwitch}/>
@@ -183,32 +193,147 @@ null
     <br/>
     <h3>Options</h3>
     <div className={styles.options_container}>
-    <div className={this.state.color == 'Black_Angatleta'?  styles.color_picker_selected:styles.color_picker_unselected} id="Black_Angatleta" onClick={this.handleColorSwitch}><div><Image id="Black_Angatleta"  src={'https://i.ibb.co/KxzPmJf/black-angatleta.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong id="Black_Angatleta" >AngatLeta</strong></div>
-        <div className={this.state.color == 'White_Angatleta'?  styles.color_picker_selected:styles.color_picker_unselected} id="White_Angatleta" onClick={this.handleColorSwitch}> <div><Image   id="White_Angatleta" src={'https://i.ibb.co/y4szrFX/white-angatleta.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong  id="White_Angatleta" >AngatLeta</strong></div>
-        <div className={this.state.color == 'Black_OnePinkFight'?  styles.color_picker_selected:styles.color_picker_unselected} id="Black_OnePinkFight" onClick={this.handleColorSwitch}> <div><Image id="Black_OnePinkFight" src={'https://i.ibb.co/zGMMh4C/black-one-pink-fight.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong id="Black_OnePinkFight" >One Pink Fight</strong></div>
-        <div className={this.state.color == 'Black2_OnePinkFight'?  styles.color_picker_selected:styles.color_picker_unselected} id="Black2_OnePinkFight" onClick={this.handleColorSwitch}> <div><Image id="Black2_OnePinkFight" src={'https://i.ibb.co/dr3z2Gh/black-v2-one-pink-fight.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong id="Black2_OnePinkFight" >One Pink Fight</strong></div>
-        <div className={this.state.color == 'White_OnePinkFight'?  styles.color_picker_selected:styles.color_picker_unselected} id="White_OnePinkFight" onClick={this.handleColorSwitch}> <div><Image id="White_OnePinkFight" src={'https://i.ibb.co/qWb5ynt/white-one-pink-fight.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong id="White_OnePinkFight">One Pink Fight</strong></div>
+
+        <strong className={this.state.color == 'Black_Angatleta'?  styles.color_picker_selected:styles.color_picker_unselected} id="Black_Angatleta" onClick={this.handleColorSwitch}><div><Image id="Black_Angatleta"  src={'https://i.ibb.co/KxzPmJf/black-angatleta.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong id="Black_Angatleta" >AngatLeta</strong></strong>
+        <strong className={this.state.color == 'White_Angatleta'?  styles.color_picker_selected:styles.color_picker_unselected} id="White_Angatleta" onClick={this.handleColorSwitch}> <div><Image   id="White_Angatleta" src={'https://i.ibb.co/y4szrFX/white-angatleta.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong  id="White_Angatleta" >AngatLeta</strong></strong>
+        {/* <strong className={this.state.color == 'Black_OnePinkFight'?  styles.color_picker_selected:styles.color_picker_unselected} id="Black_OnePinkFight" onClick={this.handleColorSwitch}> <div><Image id="Black_OnePinkFight" src={'https://i.ibb.co/zGMMh4C/black-one-pink-fight.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong id="Black_OnePinkFight" >One Pink Fight</strong></strong> */}
+        <strong className={this.state.color == 'Black_OnePinkFight'?  styles.color_picker_selected:styles.color_picker_unselected} id="Black_OnePinkFight" onClick={this.handleColorSwitch}> <div><Image id="Black_OnePinkFight" src={'https://i.ibb.co/dr3z2Gh/black-v2-one-pink-fight.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong id="Black_OnePinkFight" >One Pink Fight</strong></strong>
+        <strong className={this.state.color == 'White_OnePinkFight'?  styles.color_picker_selected:styles.color_picker_unselected} id="White_OnePinkFight" onClick={this.handleColorSwitch}> <div><Image id="White_OnePinkFight" src={'https://i.ibb.co/qWb5ynt/white-one-pink-fight.png'} width={'100'} height={20} objectFit="cover" className={styles.chip}/></div> <strong id="White_OnePinkFight">One Pink Fight</strong></strong>
     </div>
     
     </div>
-    <br/>
+    {/* <h3>Material</h3>
+    <p>Polyester</p> */}
     <h3>Sizes</h3>
-        <strong className={this.state.size == 'S'?  styles.color_picker_selected:styles.color_picker_unselected} id="S" onClick={this.handleSizeSwitch}>S</strong>
-        <strong className={this.state.size == 'M'?  styles.color_picker_selected:styles.color_picker_unselected} id="M" onClick={this.handleSizeSwitch}>M</strong>
-        <strong className={this.state.size == 'L'?  styles.color_picker_selected:styles.color_picker_unselected} id="L" onClick={this.handleSizeSwitch}>L</strong>
-        <strong className={this.state.size == 'XL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XL" onClick={this.handleSizeSwitch}>XL</strong>
-        <strong className={this.state.size == 'XXL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XXL" onClick={this.handleSizeSwitch}>XXL</strong>
+    {
+
+        this.state.color=="Black_OnePinkFight"  ?
+        <>
+{ parseInt(this.state.black_OnePinkFight_total[0])  >= 100 ? null:<strong className={this.state.size == 'XS'?  styles.color_picker_selected:styles.color_picker_unselected} id="XS" onClick={this.handleSizeSwitch}>XS</strong>
+
+}
+{parseInt(this.state.black_OnePinkFight_total[0])  >= 100 ? null:<strong className={this.state.size == 'S'?  styles.color_picker_selected:styles.color_picker_unselected} id="S" onClick={this.handleSizeSwitch}>S</strong>
+
+}
+{parseInt(this.state.black_OnePinkFight_total[1])  >= 200  ? null:<strong className={this.state.size == 'M'?  styles.color_picker_selected:styles.color_picker_unselected} id="M" onClick={this.handleSizeSwitch}>M</strong>
+
+}
+{parseInt(this.state.black_OnePinkFight_total[2])  >= 100? null:<strong className={this.state.size == 'L'?  styles.color_picker_selected:styles.color_picker_unselected} id="L" onClick={this.handleSizeSwitch}>L</strong>
+
+}
+{parseInt(this.state.black_OnePinkFight_total[3])  >= 100? null:<strong className={this.state.size == 'XL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XL" onClick={this.handleSizeSwitch}>XL</strong>
+
+}
+
+{parseInt(this.state.black_OnePinkFight_total[3])  >= 100 ? null:<strong className={this.state.size == 'XXL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XXL" onClick={this.handleSizeSwitch}>XXL</strong>
+
+}
+        </>
+        :
+        null
+    }
+
+
+{
+
+ this.state.color=="White_OnePinkFight" ?
+<>
+{ parseInt(this.state.white_OnePinkFight_total[0])  >= 100 ? null:<strong className={this.state.size == 'XS'?  styles.color_picker_selected:styles.color_picker_unselected} id="XS" onClick={this.handleSizeSwitch}>XS</strong>
+
+}
+{parseInt(this.state.white_OnePinkFight_total[0])  >= 100 ? null:<strong className={this.state.size == 'S'?  styles.color_picker_selected:styles.color_picker_unselected} id="S" onClick={this.handleSizeSwitch}>S</strong>
+
+}
+{parseInt(this.state.white_OnePinkFight_total[1])  >= 200  ? null:<strong className={this.state.size == 'M'?  styles.color_picker_selected:styles.color_picker_unselected} id="M" onClick={this.handleSizeSwitch}>M</strong>
+
+}
+{parseInt(this.state.white_OnePinkFight_total[2])  >= 100 ? null:<strong className={this.state.size == 'L'?  styles.color_picker_selected:styles.color_picker_unselected} id="L" onClick={this.handleSizeSwitch}>L</strong>
+
+}
+{parseInt(this.state.white_OnePinkFight_total[3])  >= 100 ? null:<strong className={this.state.size == 'XL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XL" onClick={this.handleSizeSwitch}>XL</strong>
+
+}
+
+{parseInt(this.state.white_OnePinkFight_total[3])  >= 100 ? null:<strong className={this.state.size == 'XXL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XXL" onClick={this.handleSizeSwitch}>XXL</strong>
+
+}
+</>
+:
+null
+}    
+       {
+
+this.state.color=="Black_Angatleta"  ?
+<> 
+{parseInt(this.state.black_angatleta_total[0])  >= 200  ? null:<strong className={this.state.size == 'XS'?  styles.color_picker_selected:styles.color_picker_unselected} id="XS" onClick={this.handleSizeSwitch}>XS</strong>
+
+}
+{parseInt(this.state.black_angatleta_total[0])  >= 200  ? null:<strong className={this.state.size == 'S'?  styles.color_picker_selected:styles.color_picker_unselected} id="S" onClick={this.handleSizeSwitch}>S</strong>
+
+}
+{parseInt(this.state.black_angatleta_total[1])  >= 300  ? null:<strong className={this.state.size == 'M'?  styles.color_picker_selected:styles.color_picker_unselected} id="M" onClick={this.handleSizeSwitch}>M</strong>
+
+}
+{parseInt(this.state.black_angatleta_total[2])  >= 250  ? null:<strong className={this.state.size == 'L'?  styles.color_picker_selected:styles.color_picker_unselected} id="L" onClick={this.handleSizeSwitch}>L</strong>
+
+}
+{parseInt(this.state.black_angatleta_total[3])  >= 250 ? null:<strong className={this.state.size == 'XL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XL" onClick={this.handleSizeSwitch}>XL</strong>
+
+}
+
+{parseInt(this.state.black_angatleta_total[3])  >= 250 ? null:<strong className={this.state.size == 'XXL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XXL" onClick={this.handleSizeSwitch}>XXL</strong>
+
+}
+
+
+
+
+</>
+:
+null
+}
+{
+
+  this.state.color=="White_Angatleta" ?
+<> 
+{parseInt(this.state.white_angatleta_total[0])  >= 200  ? null:<strong className={this.state.size == 'XS'?  styles.color_picker_selected:styles.color_picker_unselected} id="XS" onClick={this.handleSizeSwitch}>XS</strong>
+
+}
+{parseInt(this.state.white_angatleta_total[0])  >= 200  ? null:<strong className={this.state.size == 'S'?  styles.color_picker_selected:styles.color_picker_unselected} id="S" onClick={this.handleSizeSwitch}>S</strong>
+
+}
+{parseInt(this.state.white_angatleta_total[1])  >= 300  ? null:<strong className={this.state.size == 'M'?  styles.color_picker_selected:styles.color_picker_unselected} id="M" onClick={this.handleSizeSwitch}>M</strong>
+
+}
+{parseInt(this.state.white_angatleta_total[2])  >= 250  ? null:<strong className={this.state.size == 'L'?  styles.color_picker_selected:styles.color_picker_unselected} id="L" onClick={this.handleSizeSwitch}>L</strong>
+
+}
+{parseInt(this.state.white_angatleta_total[3])  >= 250 ? null:<strong className={this.state.size == 'XL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XL" onClick={this.handleSizeSwitch}>XL</strong>
+
+}
+
+{parseInt(this.state.white_angatleta_total[3])  >= 250 ? null:<strong className={this.state.size == 'XXL'?  styles.color_picker_selected:styles.color_picker_unselected} id="XXL" onClick={this.handleSizeSwitch}>XXL</strong>
+
+}
+
+
+
+
+</>
+:
+null
+}
+
+       
         <br/>
     <br/>
     <br/>
-    <InputComponent name={'quantity'} type={'number'}  label={'Quantity'}required onChange={this.handleChange} id = {'quantity'} value = {this.quantity} />
+    <InputComponent name={'quantity'} type={'number'}  label={'Quantity'}required onChange={this.handleChange} id = {'quantity'} value = {this.quantity} min={1} max={5}/>
   <br/>
   <div className={styles.RID_container}>
-        <strong>Note<br/></strong>
-        <p><strong>Price: </strong> <br/>₱ {this.state.quantity==''? 299 : this.state.quantity * 299 }.00</p>
-        <p><strong>Order Distribution Date and Time: </strong> <br/>May 2, 2022 from 8:00 A.M. to 7:00 P.M.</p>
-        <p><strong>Order Distribution Place: </strong> <br/> 19 Lasalle St., Brgy Silangan Cubao, QC</p>
-     
+        
+        <p className={styles.price}><strong>Price: </strong> <br/>₱ {this.state.quantity==''? 299 : this.state.quantity * 299 }.00</p>
+    
  </div>
 
 </div>
@@ -229,32 +354,16 @@ null
    
         <h3>Accounts</h3>  
 
-       <div className={styles.landBank_card}>
-        <h5 className={styles.text}>BDO</h5>
-        <h5 className={styles.text}>010720017726</h5>
-        <h4 className={styles.text}>3347021708</h4>
-        </div>
-      
-        <div className={styles.Gcash_card}>
-            
-        <h5 className={styles.text}>GCASH</h5>
-        <h5 className={styles.text}>Juan Lorenzo S Cruz</h5>
-        <h4 className={styles.text}>09175933925</h4>
-        </div>
-        
-        <div className={styles.BPI_card}>
-        <h5 className={styles.text}>BPI</h5>
-        <h5 className={styles.text}>Juan Lorenzo S Cruz</h5>
-        <h4 className={styles.text}>4289153727</h4>
-        </div>
+  
 
          <select name="mode" id="mode" value={this.mode} onChange={this.handleChange} className={styles.select}>
             <option value="Gcash" className={styles.option}>Gcash</option>
             <option value="BDO" className={styles.option}>BDO</option>
             <option value="BPI" className={styles.option}>BPI</option>
         </select>
-        <InputComponent name={'referenceNumber'} type={'number'}  label={'Reference Number'} onChange={this.handleChange} id = {'RefNum'} value = {this.RefNum} required/>
-
+     
+        <InputComponent name={'referenceNumber'} type={'text'}  label={'Reference Number'} onChange={this.handleChange} id = {'RefNum'} value = {this.RefNum} required/>
+       
        
         
 <div>

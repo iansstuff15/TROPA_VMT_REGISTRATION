@@ -27,19 +27,61 @@ export default async function handler(req, res) {
 
     const googleSheets = google.sheets({version:'v4', auth: client});
   const  spreadsheetId = process.env.SHEETS_ID;
-   await googleSheets.spreadsheets.values.append({
-       auth,
-       spreadsheetId,
-       range:'Shirt_Orders!A2',
-       valueInputOption: 'USER_ENTERED',
-       resource: {
-           values:[[
-           body.RID, body.firstName,body.lastName,body.email,body.phone,body.mode,body.color, now, now, body.RefNum, body.quantity, body.size
-            ]]
-       }
-   })
+  
+  if(body.color.includes('Angatleta')&& body.color.includes('Black')){
+    await googleSheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range:'Black_Shirt_Orders_Angatleta!A2',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+            values:[[
+            body.RID, body.firstName,body.lastName,body.email,body.phone,body.mode,body.color, now, now, body.RefNum, body.quantity, body.size
+             ]]
+        }
+    })
+  }
+  if(body.color.includes('Angatleta')&& body.color.includes('White')){
+    await googleSheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range:'White_Shirt_Orders_Angatleta!A2',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+            values:[[
+            body.RID, body.firstName,body.lastName,body.email,body.phone,body.mode,body.color, now, now, body.RefNum, body.quantity, body.size
+             ]]
+        }
+    })
+  }
+ 
+  if(body.color.includes('OnePinkFight')&& body.color.includes('Black')){
+    await googleSheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range:'Black_Shirt_Orders_One_Pink_Fight!A2',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+            values:[[
+            body.RID, body.firstName,body.lastName,body.email,body.phone,body.mode,body.color, now, now, body.RefNum, body.quantity, body.size
+             ]]
+        }
+    })
+  }
 
-
+  if(body.color.includes('OnePinkFight')&& body.color.includes('White')){
+    await googleSheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range:'White_Shirt_Orders_One_Pink_Fight!A2',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+            values:[[
+            body.RID, body.firstName,body.lastName,body.email,body.phone,body.mode,body.color, now, now, body.RefNum, body.quantity, body.size
+             ]]
+        }
+    })
+  }
 
 
 
@@ -96,7 +138,7 @@ const options = {
              <span class="grey_highlight" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #EDEDED;margin-bottom: 10px;border-radius: 10px;text-align: center;display: inline-flex;margin-right: 10px;"><strong style="margin: 0;padding: 0;border: 0;">Size: </strong> ${body.size} </span>
               <span class="grey_highlight" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #EDEDED;margin-bottom: 10px;border-radius: 10px;text-align: center;display: inline-flex;margin-right: 10px;"> <strong style="margin: 0;padding: 0;border: 0;">Quantity: </strong> ${body.quantity}</span> <br style="margin: 0;padding: 0;border: 0;">
              <span class="grey_highlight" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #EDEDED;margin-bottom: 10px;border-radius: 10px;text-align: center;display: inline-flex;margin-right: 10px;"><strong style="margin: 0;padding: 0;border: 0;">Name: </strong> ${body.lastName+ ', '+ body.firstName} </span> <span class="grey_highlight" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #EDEDED;margin-bottom: 10px;border-radius: 10px;text-align: center;display: inline-flex;margin-right: 10px;"> <strong style="margin: 0;padding: 0;border: 0;">Date Received: </strong> ${now}</span> <br style="margin: 0;padding: 0;border: 0;">
-             <span class="grey_highlight" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #EDEDED;margin-bottom: 10px;border-radius: 10px;text-align: center;display: inline-flex;margin-right: 10px;"><strong style="margin: 0;padding: 0;border: 0;">Distribution Date & Time: </strong> starts on May 2, 2022 from 8:00 A.M. to 7:00 P.M. </span> <span class="grey_highlight" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #EDEDED;margin-bottom: 10px;border-radius: 10px;text-align: center;display: inline-flex;margin-right: 10px;"> <strong style="margin: 0;padding: 0;border: 0;">Distribution Place: </strong> 19 Lasalle St., Brgy Silangan Cubao, QC</span> <br style="margin: 0;padding: 0;border: 0;">
+             <span class="grey_highlight" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #EDEDED;margin-bottom: 10px;border-radius: 10px;text-align: center;display: inline-flex;margin-right: 10px;"><strong style="margin: 0;padding: 0;border: 0;">Distribution Date & Time: </strong> starts on May 3, 2022 from 9:00 A.M. onwards </span> <span class="grey_highlight" style="margin: 0;padding: 20px;border: 0;font-weight: bolder;font-family: 'Raleway', sans-serif;text-decoration: none;background-color: #EDEDED;margin-bottom: 10px;border-radius: 10px;text-align: center;display: inline-flex;margin-right: 10px;"> <strong style="margin: 0;padding: 0;border: 0;">Distribution Place: </strong> Smart Araneta Coliseum Entrance</span> <br style="margin: 0;padding: 0;border: 0;">
              <p style="margin: 40px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;text-align: justify;background-color: white;text-decoration: none;"></p>
              <p style="margin: 40px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;text-align: justify;background-color: white;text-decoration: none;"></p>
              <p style="margin: 40px 0;padding: 0;border: 0;font-weight: normal;font-family: 'Raleway', sans-serif;text-align: justify;background-color: white;text-decoration: none;"></p>
